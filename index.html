@@ -3,61 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Administración de Proyectos – Unidad I</title>
+<title>Metodologías de Administración de Proyectos</title>
+
 <style>
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
     margin:0;
-    background-color:#f4f6f9;
+    background:#f4f6f9;
     color:#333;
 }
+
 header{
     background:#1e3a5f;
     color:white;
     padding:25px;
     text-align:center;
 }
+
 nav{
     background:#16324f;
     padding:12px;
     text-align:center;
 }
+
 nav a{
     color:white;
     margin:0 15px;
     text-decoration:none;
     font-weight:bold;
 }
+
 nav a:hover{
     text-decoration:underline;
 }
+
 section{
     padding:40px;
     margin:30px auto;
-    width:85%;
+    width:90%;
     background:white;
     border-radius:10px;
     box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
+
 h2{
     color:#1e3a5f;
     border-bottom:2px solid #e0e6ed;
     padding-bottom:8px;
 }
+
 table{
     width:100%;
     border-collapse:collapse;
     margin-top:20px;
+    font-size:14px;
 }
+
 th, td{
     border:1px solid #d0d7de;
-    padding:10px;
+    padding:8px;
     text-align:left;
+    vertical-align:top;
 }
+
 th{
     background:#1e3a5f;
     color:white;
 }
+
 footer{
     text-align:center;
     padding:20px;
@@ -67,80 +80,61 @@ footer{
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Administración de Proyectos</h1>
-<p><strong>Estudiante:</strong> Jorge Emilio Garcia Raygoza<br>
-Materia: Administración de Proyectos<br>
-Unidad I – Fundamentos de la Administración de Proyectos</p>
+<h1>Metodologías de Administración de Proyectos</h1>
+<p>Unidad I – Administración de Proyectos</p>
 </header>
 
 <nav>
-<a href="#introduccion">Introducción</a>
-<a href="#elementos">Elementos Clave</a>
-<a href="#ciclo">Ciclo de Vida</a>
-<a href="#roles">Roles</a>
-<a href="#herramientas">Herramientas</a>
-<a href="#metodologias">Metodologías</a>
-<a href="#fuentes">Fuentes</a>
+<a href="index.html">Inicio</a>
+<a href="#mapa">Mapa Mental</a>
+<a href="#cuadro">Cuadro Comparativo</a>
+<a href="#reflexion">Reflexión</a>
 </nav>
 
-<section id="introduccion">
-<h2>1. Introducción a la Administración de Proyectos</h2>
-<p>La Administración de Proyectos (AP) es la disciplina que aplica conocimientos, habilidades, herramientas y técnicas para cumplir los objetivos de un proyecto dentro de restricciones definidas como alcance, tiempo y costo. Según el PMBOK® Guide (PMI, 2021), un proyecto es un esfuerzo temporal emprendido para crear un producto, servicio o resultado único.</p>
-<p>La AP es fundamental en las organizaciones porque permite planificar estratégicamente, optimizar recursos, reducir riesgos y asegurar resultados medibles.</p>
+<section id="mapa">
+<h2>Mapa Mental – Proceso de Innovación</h2>
+
+<svg width="100%" height="600">
+
+<!-- Centro -->
+<circle cx="500" cy="300" r="90" fill="#1e3a5f"/>
+<text x="500" y="305" fill="white" text-anchor="middle" font-size="16" font-weight="bold">
+Proceso de Innovación
+</text>
+
+<!-- Ramas -->
+<line x1="500" y1="210" x2="500" y2="100" stroke="#333" stroke-width="2"/>
+<text x="500" y="80" text-anchor="middle">Identificación de oportunidad</text>
+
+<line x1="590" y1="300" x2="750" y2="300" stroke="#333" stroke-width="2"/>
+<text x="820" y="305">Generación de ideas</text>
+
+<line x1="500" y1="390" x2="500" y2="520" stroke="#333" stroke-width="2"/>
+<text x="500" y="560" text-anchor="middle">Evaluación y selección</text>
+
+<line x1="410" y1="300" x2="250" y2="300" stroke="#333" stroke-width="2"/>
+<text x="150" y="305">Desarrollo del proyecto</text>
+
+<line x1="570" y1="230" x2="720" y2="150" stroke="#333" stroke-width="2"/>
+<text x="830" y="140">Implementación</text>
+
+<line x1="430" y1="370" x2="250" y2="500" stroke="#333" stroke-width="2"/>
+<text x="120" y="530">Evaluación de resultados</text>
+
+</svg>
+
+<p>
+El proceso de innovación se vincula directamente con la Administración de Proyectos, ya que cada fase requiere planificación, asignación de recursos, gestión de riesgos y control de resultados para transformar ideas en soluciones reales.
+</p>
+
 </section>
 
-<section id="elementos">
-<h2>2. Elementos Clave del Proyecto</h2>
-<ul>
-<li><strong>Objetivos:</strong> Resultados específicos que se desean alcanzar.</li>
-<li><strong>Alcance:</strong> Límites y entregables del proyecto.</li>
-<li><strong>Tiempo:</strong> Cronograma y duración.</li>
-<li><strong>Costo:</strong> Presupuesto asignado.</li>
-<li><strong>Calidad:</strong> Cumplimiento de estándares.</li>
-<li><strong>Riesgos:</strong> Eventos inciertos que pueden impactar el proyecto.</li>
-<li><strong>Stakeholders:</strong> Personas o grupos interesados en el proyecto.</li>
-</ul>
-</section>
-
-<section id="ciclo">
-<h2>3. Ciclo de Vida del Proyecto</h2>
-<p>El ciclo de vida del proyecto se compone de cinco fases:</p>
-<ol>
-<li>Inicio</li>
-<li>Planeación</li>
-<li>Ejecución</li>
-<li>Monitoreo y Control</li>
-<li>Cierre</li>
-</ol>
-<p>Cada fase permite estructurar el trabajo y asegurar la correcta supervisión del desempeño del proyecto.</p>
-</section>
-
-<section id="roles">
-<h2>4. Roles y Responsabilidades</h2>
-<ul>
-<li><strong>Director del Proyecto:</strong> Responsable de la planificación y ejecución.</li>
-<li><strong>Equipo de Trabajo:</strong> Ejecuta las actividades.</li>
-<li><strong>Patrocinador:</strong> Proporciona apoyo financiero y estratégico.</li>
-<li><strong>Stakeholders:</strong> Interesados que influyen o son impactados por el proyecto.</li>
-</ul>
-</section>
-
-<section id="herramientas">
-<h2>5. Herramientas Básicas</h2>
-<ul>
-<li>EDT (Estructura de Desglose de Trabajo)</li>
-<li>Diagrama de Gantt</li>
-<li>Matriz de Riesgos</li>
-<li>Plan de Comunicación</li>
-</ul>
-</section>
-
-<section id="metodologias">
-<h2>6. Metodologías de Administración de Proyectos</h2>
-<p>Las metodologías de Administración de Proyectos pueden clasificarse en tradicionales y ágiles. A continuación, se presenta un cuadro comparativo general:</p>
+<section id="cuadro">
+<h2>Cuadro Comparativo de Metodologías</h2>
 
 <table>
 <tr>
@@ -149,78 +143,87 @@ Unidad I – Fundamentos de la Administración de Proyectos</p>
 <th>Fases / Procesos</th>
 <th>Ventajas</th>
 <th>Limitaciones</th>
-<th>Ejemplo de Aplicación</th>
+<th>Ejemplo</th>
 </tr>
+
 <tr>
-<td>PMBOK (PMI)</td>
+<td><strong>PMBOK</strong></td>
 <td>Guía de buenas prácticas basada en procesos y áreas de conocimiento.</td>
 <td>Inicio, Planeación, Ejecución, Monitoreo y Control, Cierre.</td>
 <td>Estructura formal y estandarizada.</td>
-<td>Puede ser rígida en entornos cambiantes.</td>
-<td>Construcción, infraestructura.</td>
+<td>Puede ser rígida.</td>
+<td>Construcción e infraestructura.</td>
 </tr>
+
 <tr>
-<td>Waterfall</td>
+<td><strong>Waterfall</strong></td>
 <td>Modelo secuencial lineal.</td>
-<td>Requisitos, Diseño, Desarrollo, Pruebas, Implementación.</td>
-<td>Claridad en etapas.</td>
+<td>Requisitos → Diseño → Desarrollo → Pruebas → Implementación.</td>
+<td>Claridad y documentación detallada.</td>
 <td>Poca flexibilidad ante cambios.</td>
-<td>Proyectos industriales.</td>
+<td>Manufactura.</td>
 </tr>
+
 <tr>
-<td>PRINCE2</td>
-<td>Metodología estructurada basada en principios y procesos.</td>
-<td>Inicio, Dirección, Control por etapas, Cierre.</td>
-<td>Fuerte control y documentación.</td>
+<td><strong>PRINCE2</strong></td>
+<td>Metodología estructurada basada en principios.</td>
+<td>Inicio, Control por etapas, Dirección, Cierre.</td>
+<td>Fuerte control organizacional.</td>
 <td>Alta carga administrativa.</td>
-<td>Gobierno y sector público.</td>
+<td>Sector público.</td>
 </tr>
+
 <tr>
-<td>Scrum</td>
+<td><strong>Scrum</strong></td>
 <td>Marco ágil basado en iteraciones (sprints).</td>
 <td>Planificación, Sprint, Revisión, Retrospectiva.</td>
 <td>Alta adaptabilidad.</td>
-<td>Requiere equipos autoorganizados.</td>
-<td>Desarrollo de software.</td>
+<td>Requiere equipo comprometido.</td>
+<td>Software.</td>
 </tr>
+
 <tr>
-<td>Extreme Programming (XP)</td>
+<td><strong>XP</strong></td>
 <td>Metodología ágil centrada en calidad técnica.</td>
-<td>Iteraciones cortas, pruebas continuas.</td>
-<td>Mejora continua.</td>
-<td>Requiere disciplina técnica.</td>
+<td>Iteraciones cortas y pruebas constantes.</td>
+<td>Alta calidad del producto.</td>
+<td>Exige disciplina técnica.</td>
 <td>Aplicaciones web.</td>
 </tr>
+
 <tr>
-<td>APF</td>
-<td>Framework adaptable enfocado en cambios constantes.</td>
+<td><strong>APF</strong></td>
+<td>Framework adaptable a cambios constantes.</td>
 <td>Ciclos iterativos adaptativos.</td>
-<td>Alta flexibilidad.</td>
-<td>Menos estructura formal.</td>
-<td>Proyectos innovadores.</td>
+<td>Flexibilidad total.</td>
+<td>Menor formalidad documental.</td>
+<td>Startups.</td>
 </tr>
+
 <tr>
-<td>Design Thinking</td>
-<td>Enfoque centrado en el usuario para innovación.</td>
+<td><strong>Design Thinking</strong></td>
+<td>Enfoque centrado en el usuario.</td>
 <td>Empatizar, Definir, Idear, Prototipar, Testear.</td>
-<td>Fomenta creatividad.</td>
-<td>No sustituye planificación formal.</td>
+<td>Fomenta innovación.</td>
+<td>No sustituye gestión formal.</td>
 <td>Desarrollo de productos innovadores.</td>
 </tr>
+
 </table>
 
-<p><strong>Nota:</strong> El mapa mental del proceso de innovación, la reflexión personal y las referencias en formato APA se entregan en archivo PDF conforme a los lineamientos de la actividad CE1.2.</p>
 </section>
 
-<section id="fuentes">
-<h2>Fuentes</h2>
-<p>Project Management Institute (2021). <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide)</em>, 7th Edition.</p>
-<p>Highsmith, J. (2009). <em>Agile Project Management: Creating Innovative Products</em>. Addison-Wesley.</p>
-<p>Beck, K. (2004). <em>Extreme Programming Explained: Embrace Change</em>. Addison-Wesley.</p>
+<section id="reflexion">
+<h2>Reflexión Personal</h2>
+
+<p>
+El proceso de innovación impacta directamente en la gestión de proyectos porque transforma ideas abstractas en resultados concretos mediante una estructura organizada. Cada fase requiere planificación estratégica, asignación eficiente de recursos y evaluación constante de riesgos. La Administración de Proyectos permite que la innovación no sea improvisada, sino controlada y medible. Asimismo, las metodologías ágiles demuestran que la flexibilidad es clave en entornos cambiantes, mientras que las metodologías tradicionales aportan estructura y control. Considero que integrar ambas perspectivas fortalece la capacidad organizacional para competir en mercados dinámicos, asegurando calidad, cumplimiento de objetivos y generación de valor sostenible.
+</p>
+
 </section>
 
 <footer>
-© 2026 – Sitio académico desarrollado para fines educativos
+© 2026 – Proyecto académico UABC
 </footer>
 
 </body>
