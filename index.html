@@ -1,100 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Proyectos – Unidad I</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f4f6f8; color: #333; }
-        header { background-color: #1f3c88; color: white; padding: 20px; text-align: center; }
-        nav { background-color: #162447; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        section { padding: 30px; background-color: white; margin: 20px; border-radius: 8px; }
-        h2 { color: #1f3c88; }
-        footer { background-color: #1f3c88; color: white; text-align: center; padding: 15px; }
-        ul { line-height: 1.8; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administración de Proyectos – Unidad I</title>
+<style>
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    background-color:#f4f6f9;
+    color:#333;
+}
+header{
+    background:#1e3a5f;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+nav{
+    background:#16324f;
+    padding:12px;
+    text-align:center;
+}
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+section{
+    padding:40px;
+    margin:30px auto;
+    width:85%;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+h2{
+    color:#1e3a5f;
+    border-bottom:2px solid #e0e6ed;
+    padding-bottom:8px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+th, td{
+    border:1px solid #d0d7de;
+    padding:10px;
+    text-align:left;
+}
+th{
+    background:#1e3a5f;
+    color:white;
+}
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e3a5f;
+    color:white;
+    margin-top:40px;
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Administración de Proyectos</h1>
-    <p>Unidad I. Fundamentos de la Administración de Proyectos</p>
-    <p><strong>Alumno:</strong> Jorge Emilio Garcia Raygoza</p>
-    <p><strong>Materia:</strong> Administración de Proyectos</p>
+<h1>Administración de Proyectos</h1>
+<p><strong>Estudiante:</strong> Jorge Emilio Garcia Raygoza<br>
+Materia: Administración de Proyectos<br>
+Unidad I – Fundamentos de la Administración de Proyectos</p>
 </header>
 
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#introduccion">Introducción</a>
-    <a href="#elementos">Elementos y Ciclo</a>
-    <a href="#roles">Roles y Herramientas</a>
-    <a href="#fuentes">Fuentes</a>
+<a href="#introduccion">Introducción</a>
+<a href="#elementos">Elementos Clave</a>
+<a href="#ciclo">Ciclo de Vida</a>
+<a href="#roles">Roles</a>
+<a href="#herramientas">Herramientas</a>
+<a href="#metodologias">Metodologías</a>
+<a href="#fuentes">Fuentes</a>
 </nav>
 
-<section id="inicio">
-    <h2>Inicio</h2>
-    <p>Este sitio web presenta los conceptos básicos de la Administración de Proyectos, basados en el PMBOK, con el objetivo de identificar, organizar y comunicar los fundamentos que permiten gestionar proyectos de forma eficiente dentro de las organizaciones.</p>
-</section>
-
 <section id="introduccion">
-    <h2>Introducción a la Administración de Proyectos</h2>
-    <p>La Administración de Proyectos es la aplicación de conocimientos, habilidades, herramientas y técnicas para cumplir con los objetivos de un proyecto.</p>
-    <h3>¿Qué es un proyecto?</h3>
-    <p>Un proyecto es un esfuerzo temporal que se realiza para crear un producto, servicio o resultado único.</p>
-    <h3>Importancia en las organizaciones</h3>
-    <p>La AP permite optimizar recursos, reducir riesgos, mejorar la calidad y asegurar el cumplimiento de objetivos estratégicos.</p>
+<h2>1. Introducción a la Administración de Proyectos</h2>
+<p>La Administración de Proyectos (AP) es la disciplina que aplica conocimientos, habilidades, herramientas y técnicas para cumplir los objetivos de un proyecto dentro de restricciones definidas como alcance, tiempo y costo. Según el PMBOK® Guide (PMI, 2021), un proyecto es un esfuerzo temporal emprendido para crear un producto, servicio o resultado único.</p>
+<p>La AP es fundamental en las organizaciones porque permite planificar estratégicamente, optimizar recursos, reducir riesgos y asegurar resultados medibles.</p>
 </section>
 
 <section id="elementos">
-    <h2>Elementos Clave y Ciclo de Vida del Proyecto</h2>
-    <h3>Elementos clave</h3>
-    <ul>
-        <li>Objetivos</li>
-        <li>Alcance</li>
-        <li>Tiempo</li>
-        <li>Costo</li>
-        <li>Calidad</li>
-        <li>Riesgos</li>
-        <li>Stakeholders</li>
-    </ul>
-    <h3>Ciclo de vida del proyecto</h3>
-    <ul>
-        <li>Inicio</li>
-        <li>Planeación</li>
-        <li>Ejecución</li>
-        <li>Monitoreo y control</li>
-        <li>Cierre</li>
-    </ul>
+<h2>2. Elementos Clave del Proyecto</h2>
+<ul>
+<li><strong>Objetivos:</strong> Resultados específicos que se desean alcanzar.</li>
+<li><strong>Alcance:</strong> Límites y entregables del proyecto.</li>
+<li><strong>Tiempo:</strong> Cronograma y duración.</li>
+<li><strong>Costo:</strong> Presupuesto asignado.</li>
+<li><strong>Calidad:</strong> Cumplimiento de estándares.</li>
+<li><strong>Riesgos:</strong> Eventos inciertos que pueden impactar el proyecto.</li>
+<li><strong>Stakeholders:</strong> Personas o grupos interesados en el proyecto.</li>
+</ul>
+</section>
+
+<section id="ciclo">
+<h2>3. Ciclo de Vida del Proyecto</h2>
+<p>El ciclo de vida del proyecto se compone de cinco fases:</p>
+<ol>
+<li>Inicio</li>
+<li>Planeación</li>
+<li>Ejecución</li>
+<li>Monitoreo y Control</li>
+<li>Cierre</li>
+</ol>
+<p>Cada fase permite estructurar el trabajo y asegurar la correcta supervisión del desempeño del proyecto.</p>
 </section>
 
 <section id="roles">
-    <h2>Roles y Herramientas de la Administración de Proyectos</h2>
-    <h3>Roles principales</h3>
-    <ul>
-        <li>Director del proyecto</li>
-        <li>Equipo de trabajo</li>
-        <li>Patrocinador</li>
-        <li>Stakeholders</li>
-    </ul>
-    <h3>Herramientas básicas</h3>
-    <ul>
-        <li>EDT (Estructura de Desglose de Trabajo)</li>
-        <li>Cronograma (Diagrama de Gantt)</li>
-        <li>Matriz de riesgos</li>
-        <li>Plan de comunicación</li>
-    </ul>
+<h2>4. Roles y Responsabilidades</h2>
+<ul>
+<li><strong>Director del Proyecto:</strong> Responsable de la planificación y ejecución.</li>
+<li><strong>Equipo de Trabajo:</strong> Ejecuta las actividades.</li>
+<li><strong>Patrocinador:</strong> Proporciona apoyo financiero y estratégico.</li>
+<li><strong>Stakeholders:</strong> Interesados que influyen o son impactados por el proyecto.</li>
+</ul>
+</section>
+
+<section id="herramientas">
+<h2>5. Herramientas Básicas</h2>
+<ul>
+<li>EDT (Estructura de Desglose de Trabajo)</li>
+<li>Diagrama de Gantt</li>
+<li>Matriz de Riesgos</li>
+<li>Plan de Comunicación</li>
+</ul>
+</section>
+
+<section id="metodologias">
+<h2>6. Metodologías de Administración de Proyectos</h2>
+<p>Las metodologías de Administración de Proyectos pueden clasificarse en tradicionales y ágiles. A continuación, se presenta un cuadro comparativo general:</p>
+
+<table>
+<tr>
+<th>Metodología</th>
+<th>Definición</th>
+<th>Fases / Procesos</th>
+<th>Ventajas</th>
+<th>Limitaciones</th>
+<th>Ejemplo de Aplicación</th>
+</tr>
+<tr>
+<td>PMBOK (PMI)</td>
+<td>Guía de buenas prácticas basada en procesos y áreas de conocimiento.</td>
+<td>Inicio, Planeación, Ejecución, Monitoreo y Control, Cierre.</td>
+<td>Estructura formal y estandarizada.</td>
+<td>Puede ser rígida en entornos cambiantes.</td>
+<td>Construcción, infraestructura.</td>
+</tr>
+<tr>
+<td>Waterfall</td>
+<td>Modelo secuencial lineal.</td>
+<td>Requisitos, Diseño, Desarrollo, Pruebas, Implementación.</td>
+<td>Claridad en etapas.</td>
+<td>Poca flexibilidad ante cambios.</td>
+<td>Proyectos industriales.</td>
+</tr>
+<tr>
+<td>PRINCE2</td>
+<td>Metodología estructurada basada en principios y procesos.</td>
+<td>Inicio, Dirección, Control por etapas, Cierre.</td>
+<td>Fuerte control y documentación.</td>
+<td>Alta carga administrativa.</td>
+<td>Gobierno y sector público.</td>
+</tr>
+<tr>
+<td>Scrum</td>
+<td>Marco ágil basado en iteraciones (sprints).</td>
+<td>Planificación, Sprint, Revisión, Retrospectiva.</td>
+<td>Alta adaptabilidad.</td>
+<td>Requiere equipos autoorganizados.</td>
+<td>Desarrollo de software.</td>
+</tr>
+<tr>
+<td>Extreme Programming (XP)</td>
+<td>Metodología ágil centrada en calidad técnica.</td>
+<td>Iteraciones cortas, pruebas continuas.</td>
+<td>Mejora continua.</td>
+<td>Requiere disciplina técnica.</td>
+<td>Aplicaciones web.</td>
+</tr>
+<tr>
+<td>APF</td>
+<td>Framework adaptable enfocado en cambios constantes.</td>
+<td>Ciclos iterativos adaptativos.</td>
+<td>Alta flexibilidad.</td>
+<td>Menos estructura formal.</td>
+<td>Proyectos innovadores.</td>
+</tr>
+<tr>
+<td>Design Thinking</td>
+<td>Enfoque centrado en el usuario para innovación.</td>
+<td>Empatizar, Definir, Idear, Prototipar, Testear.</td>
+<td>Fomenta creatividad.</td>
+<td>No sustituye planificación formal.</td>
+<td>Desarrollo de productos innovadores.</td>
+</tr>
+</table>
+
+<p><strong>Nota:</strong> El mapa mental del proceso de innovación, la reflexión personal y las referencias en formato APA se entregan en archivo PDF conforme a los lineamientos de la actividad CE1.2.</p>
 </section>
 
 <section id="fuentes">
-    <h2>Fuentes de Consulta</h2>
-    <p>Project Management Institute (PMI). <em>Guía del PMBOK®</em> – Sexta Edición.</p>
-    <p>https://drive.google.com/file/d/1oQifQKK_P6ojaUOuc2DWsmmoIAR9hx2l/view</p>
+<h2>Fuentes</h2>
+<p>Project Management Institute (2021). <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide)</em>, 7th Edition.</p>
+<p>Highsmith, J. (2009). <em>Agile Project Management: Creating Innovative Products</em>. Addison-Wesley.</p>
+<p>Beck, K. (2004). <em>Extreme Programming Explained: Embrace Change</em>. Addison-Wesley.</p>
 </section>
 
 <footer>
-    <p>Actividad CE 1.1 – Administración de Proyectos | UABC</p>
+© 2026 – Sitio académico desarrollado para fines educativos
 </footer>
 
 </body>
