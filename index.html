@@ -1,230 +1,372 @@
+# Sitio Web – Archivos listos para pegar en GitHub
+
+He restaurado y reorganizado todo: ahora tienes **código listo** para pegar en tu repositorio como archivos separados. El documento contiene cada archivo con su nombre y el HTML completo. Copia cada bloque en GitHub usando **Add file → Create new file**, pon el nombre exacto y **Commit changes**.
+
+---
+
+## Archivos y nombres (créelos exactamente así)
+
+1. `index.html` (página principal / landing)
+2. `introduccion.html`
+3. `elementos.html`
+4. `ciclo.html`
+5. `roles.html`
+6. `herramientas.html`
+7. `metodologias.html` (incluye el mapa mental SVG mejorado y el cuadro comparativo)
+8. `fuentes.html`
+
+---
+
+<!-- FILE: index.html -->
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metodologías de Administración de Proyectos</title>
-
+<title>Administración de Proyectos – Unidad I</title>
+<link rel="stylesheet" href="/styles.css" />
 <style>
-body{
-    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-    margin:0;
-    background:#f4f6f9;
-    color:#333;
-}
-
-header{
-    background:#1e3a5f;
-    color:white;
-    padding:25px;
-    text-align:center;
-}
-
-nav{
-    background:#16324f;
-    padding:12px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-nav a:hover{
-    text-decoration:underline;
-}
-
-section{
-    padding:40px;
-    margin:30px auto;
-    width:90%;
-    background:white;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
-}
-
-h2{
-    color:#1e3a5f;
-    border-bottom:2px solid #e0e6ed;
-    padding-bottom:8px;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-    font-size:14px;
-}
-
-th, td{
-    border:1px solid #d0d7de;
-    padding:8px;
-    text-align:left;
-    vertical-align:top;
-}
-
-th{
-    background:#1e3a5f;
-    color:white;
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#1e3a5f;
-    color:white;
-    margin-top:40px;
-}
+/* Estilos mínimos embebidos para que se vea bien sin depender de archivos externos */
+:root{--primario:#16324f;--sec:#1e3a5f;--fondo:#f4f6f9}
+body{font-family:Inter, 'Segoe UI', Tahoma, sans-serif;margin:0;background:var(--fondo);color:#222}
+.header{background:linear-gradient(180deg,var(--sec),var(--primario));color:#fff;padding:28px;text-align:center}
+.header h1{margin:0;font-size:28px}
+.header p{margin:6px 0 0}
+.nav{background:var(--primario);padding:10px;text-align:center}
+.nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600}
+.container{width:92%;max-width:1100px;margin:28px auto}
+.card{background:#fff;border-radius:10px;padding:28px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.hero{display:flex;gap:22px;align-items:center;justify-content:space-between}
+.call{max-width:720px}
+.btn{display:inline-block;background:var(--sec);color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card-small{padding:18px;border-radius:8px;background:#fff}
+footer{background:var(--sec);color:#fff;text-align:center;padding:18px;margin-top:24px}
 </style>
 </head>
-
 <body>
-
-<header>
-<h1>Metodologías de Administración de Proyectos</h1>
-<p>Unidad I – Administración de Proyectos</p>
-</header>
-
-<nav>
-<a href="index.html">Inicio</a>
-<a href="#mapa">Mapa Mental</a>
-<a href="#cuadro">Cuadro Comparativo</a>
-<a href="#reflexion">Reflexión</a>
+<div class="header">
+  <h1>Administración de Proyectos</h1>
+  <p>Unidad I – Fundamentos de la Administración de Proyectos • Jorge Emilio Garcia Raygoza</p>
+</div>
+<nav class="nav">
+  <a href="introduccion.html">Introducción</a>
+  <a href="elementos.html">Elementos</a>
+  <a href="ciclo.html">Ciclo de vida</a>
+  <a href="roles.html">Roles</a>
+  <a href="herramientas.html">Herramientas</a>
+  <a href="metodologias.html">Metodologías</a>
+  <a href="fuentes.html">Fuentes</a>
 </nav>
 
-<section id="mapa">
-<h2>Mapa Mental – Proceso de Innovación</h2>
+<main class="container">
+  <section class="card hero">
+    <div class="call">
+      <h2>Proyecto: Fundamentos de la Administración de Proyectos (Unidad I)</h2>
+      <p>Este sitio presenta los conceptos esenciales de la Administración de Proyectos y un análisis comparativo de metodologías tradicionales y ágiles. Está diseñado para entrega académica conforme a CE1.1 y CE1.2.</p>
+      <a class="btn" href="metodologias.html">Ir a Metodologías (CE1.2)</a>
+    </div>
+    <div style="flex:1;text-align:right">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/PMI_logo.svg" alt="PMI" style="width:180px;opacity:0.85;filter:grayscale(10%);">
+    </div>
+  </section>
 
-<svg width="100%" height="600">
+  <section class="card" style="margin-top:18px">
+    <h3>Contenido</h3>
+    <div class="grid">
+      <div class="card-small">Introducción a la AP<br><small><a href="introduccion.html">Abrir</a></small></div>
+      <div class="card-small">Elementos clave<br><small><a href="elementos.html">Abrir</a></small></div>
+      <div class="card-small">Ciclo de vida<br><small><a href="ciclo.html">Abrir</a></small></div>
+      <div class="card-small">Roles y responsabilidades<br><small><a href="roles.html">Abrir</a></small></div>
+      <div class="card-small">Herramientas básicas<br><small><a href="herramientas.html">Abrir</a></small></div>
+      <div class="card-small">Metodologías (CE1.2)<br><small><a href="metodologias.html">Abrir</a></small></div>
+    </div>
+  </section>
 
-<!-- Centro -->
-<circle cx="500" cy="300" r="90" fill="#1e3a5f"/>
-<text x="500" y="305" fill="white" text-anchor="middle" font-size="16" font-weight="bold">
-Proceso de Innovación
-</text>
+</main>
 
-<!-- Ramas -->
-<line x1="500" y1="210" x2="500" y2="100" stroke="#333" stroke-width="2"/>
-<text x="500" y="80" text-anchor="middle">Identificación de oportunidad</text>
+<footer>
+  Entrega CE1.1 / CE1.2 — Administración de Proyectos • UABC
+</footer>
+</body>
+</html>
+```
 
-<line x1="590" y1="300" x2="750" y2="300" stroke="#333" stroke-width="2"/>
-<text x="820" y="305">Generación de ideas</text>
+---
 
-<line x1="500" y1="390" x2="500" y2="520" stroke="#333" stroke-width="2"/>
-<text x="500" y="560" text-anchor="middle">Evaluación y selección</text>
+<!-- FILE: introduccion.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Introducción - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}nav{background:#16324f;padding:10px;text-align:center}nav a{color:#fff;margin:0 12px;text-decoration:none}main{max-width:1000px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}</style>
+</head>
+<body>
+<header><h1>Introducción a la Administración de Proyectos</h1></header>
+<nav><a href="index.html">Inicio</a> | <a href="metodologias.html">Metodologías</a></nav>
+<main>
+<h2>Definición</h2>
+<p>La Administración de Proyectos es la aplicación de conocimientos, habilidades, herramientas y técnicas para cumplir con los objetivos del proyecto dentro de restricciones de alcance, tiempo y costo.</p>
+<h2>¿Qué es un proyecto?</h2>
+<p>Un proyecto es un esfuerzo temporal para crear un producto, servicio o resultado único. Se caracteriza por inicio y cierre definidos, recursos limitados y objetivos específicos.</p>
+</main>
+</body>
+</html>
+```
 
-<line x1="410" y1="300" x2="250" y2="300" stroke="#333" stroke-width="2"/>
-<text x="150" y="305">Desarrollo del proyecto</text>
+---
 
-<line x1="570" y1="230" x2="720" y2="150" stroke="#333" stroke-width="2"/>
-<text x="830" y="140">Implementación</text>
+<!-- FILE: elementos.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elementos - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}main{max-width:1000px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}ul{line-height:1.8}</style>
+</head>
+<body>
+<header><h1>Elementos clave de un proyecto</h1></header>
+<nav style="background:#16324f;padding:8px;text-align:center"><a href="index.html" style="color:#fff">Inicio</a></nav>
+<main>
+<h2>Elementos</h2>
+<ul>
+<li><strong>Objetivos:</strong> Definen el éxito del proyecto.</li>
+<li><strong>Alcance:</strong> Entregables y límites.</li>
+<li><strong>Tiempo:</strong> Cronograma y hitos.</li>
+<li><strong>Costo:</strong> Presupuesto.</li>
+<li><strong>Calidad:</strong> Estándares a cumplir.</li>
+<li><strong>Riesgos:</strong> Identificación y respuesta.</li>
+<li><strong>Stakeholders:</strong> Interesados y su gestión.</li>
+</ul>
+</main>
+</body>
+</html>
+```
 
-<line x1="430" y1="370" x2="250" y2="500" stroke="#333" stroke-width="2"/>
-<text x="120" y="530">Evaluación de resultados</text>
+---
+
+<!-- FILE: ciclo.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciclo de vida - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}main{max-width:1000px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}</style>
+</head>
+<body>
+<header><h1>Ciclo de vida del proyecto</h1></header>
+<nav style="background:#16324f;padding:8px;text-align:center"><a href="index.html" style="color:#fff">Inicio</a></nav>
+<main>
+<h2>Fases</h2>
+<ol>
+<li>Inicio</li>
+<li>Planeación</li>
+<li>Ejecución</li>
+<li>Monitoreo y control</li>
+<li>Cierre</li>
+</ol>
+<p>Cada fase contiene entregables y actividades específicas que garantizan el control del proyecto.</p>
+</main>
+</body>
+</html>
+```
+
+---
+
+<!-- FILE: roles.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roles - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}main{max-width:1000px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}</style>
+</head>
+<body>
+<header><h1>Roles y responsabilidades</h1></header>
+<nav style="background:#16324f;padding:8px;text-align:center"><a href="index.html" style="color:#fff">Inicio</a></nav>
+<main>
+<h2>Roles</h2>
+<ul>
+<li><strong>Director del proyecto:</strong> Lidera planificación y ejecución.</li>
+<li><strong>Equipo de trabajo:</strong> Realiza actividades técnicas.</li>
+<li><strong>Patrocinador:</strong> Aporta recursos y apoyo estratégico.</li>
+<li><strong>Stakeholders:</strong> Interesados y su gestión.</li>
+</ul>
+</main>
+</body>
+</html>
+```
+
+---
+
+<!-- FILE: herramientas.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herramientas - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}main{max-width:1000px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:8px}th{background:#16324f;color:#fff}</style>
+</head>
+<body>
+<header><h1>Herramientas básicas de la AP</h1></header>
+<nav style="background:#16324f;padding:8px;text-align:center"><a href="index.html" style="color:#fff">Inicio</a></nav>
+<main>
+<h2>Herramientas</h2>
+<table>
+<tr><th>Herramienta</th><th>Uso</th></tr>
+<tr><td>EDT</td><td>Dividir el proyecto en entregables y tareas.</td></tr>
+<tr><td>Diagrama de Gantt</td><td>Representar cronograma con dependencias.</td></tr>
+<tr><td>Matriz de riesgos</td><td>Identificar y priorizar riesgos.</td></tr>
+<tr><td>Plan de comunicación</td><td>Definir canales, frecuencia y responsables.</td></tr>
+</table>
+</main>
+</body>
+</html>
+```
+
+---
+
+<!-- FILE: metodologias.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metodologías - Administración de Proyectos</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9;color:#222}header{background:#1e3a5f;color:#fff;padding:18px;text-align:center}nav{background:#16324f;padding:8px;text-align:center}nav a{color:#fff;margin:0 10px;text-decoration:none}main{max-width:1100px;margin:20px auto;padding:18px}
+.map-card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06);margin-bottom:16px}
+h2{color:#1e3a5f}
+.table{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}th,td{border:1px solid #d0d7de;padding:10px;text-align:left}th{background:#1e3a5f;color:#fff}
+</style>
+</head>
+<body>
+<header><h1>Metodologías de Administración de Proyectos</h1></header>
+<nav><a href="index.html">Inicio</a></nav>
+<main>
+<section class="map-card" id="mapa">
+<h2>Mapa Mental — Proceso de Innovación</h2>
+<!-- Mejor SVG: circulo central con nodos alrededor, líneas curvas -->
+<svg viewBox="0 0 1000 520" width="100%" height="420">
+  <defs>
+    <filter id="s" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <!-- central -->
+  <g filter="url(#s)">
+    <circle cx="500" cy="260" r="80" fill="#1e3a5f"/>
+    <text x="500" y="266" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">Proceso de</text>
+    <text x="500" y="286" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">Innovación</text>
+  </g>
+
+  <!-- Nodos -->
+  <!-- Identificación -->
+  <line x1="500" y1="180" x2="500" y2="110" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="460" y="60" width="80" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="500" y="84" text-anchor="middle" font-size="13">Identificación</text>
+
+  <!-- Generación de ideas -->
+  <line x1="580" y1="260" x2="700" y2="260" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="700" y="236" width="160" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="780" y="258" text-anchor="middle" font-size="13">Generación de ideas</text>
+
+  <!-- Evaluación y selección -->
+  <line x1="500" y1="340" x2="500" y2="424" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="430" y="428" width="140" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="500" y="452" text-anchor="middle" font-size="13">Evaluación y selección</text>
+
+  <!-- Desarrollo del proyecto -->
+  <line x1="420" y1="260" x2="300" y2="260" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="120" y="236" width="160" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="200" y="258" text-anchor="middle" font-size="13">Desarrollo del proyecto</text>
+
+  <!-- Implementación -->
+  <line x1="580" y1="200" x2="720" y2="120" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="730" y="88" width="120" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="790" y="110" text-anchor="middle" font-size="13">Implementación</text>
+
+  <!-- Evaluación de resultados -->
+  <line x1="420" y1="330" x2="240" y2="440" stroke="#3b3b3b" stroke-width="2" stroke-linecap="round"/>
+  <rect x="120" y="476" width="210" height="36" rx="6" fill="#fff" stroke="#d6dbe1" />
+  <text x="225" y="500" text-anchor="middle" font-size="13">Evaluación de resultados</text>
 
 </svg>
 
-<p>
-El proceso de innovación se vincula directamente con la Administración de Proyectos, ya que cada fase requiere planificación, asignación de recursos, gestión de riesgos y control de resultados para transformar ideas en soluciones reales.
-</p>
-
+<p>El proceso de innovación se articula en fases que requieren planificación, recursos y control, aspectos centrales en la Administración de Proyectos.</p>
 </section>
 
-<section id="cuadro">
-<h2>Cuadro Comparativo de Metodologías</h2>
-
+<section class="table" id="cuadro">
+<h2>Cuadro comparativo: tradicionales vs ágiles</h2>
 <table>
-<tr>
-<th>Metodología</th>
-<th>Definición</th>
-<th>Fases / Procesos</th>
-<th>Ventajas</th>
-<th>Limitaciones</th>
-<th>Ejemplo</th>
-</tr>
-
-<tr>
-<td><strong>PMBOK</strong></td>
-<td>Guía de buenas prácticas basada en procesos y áreas de conocimiento.</td>
-<td>Inicio, Planeación, Ejecución, Monitoreo y Control, Cierre.</td>
-<td>Estructura formal y estandarizada.</td>
-<td>Puede ser rígida.</td>
-<td>Construcción e infraestructura.</td>
-</tr>
-
-<tr>
-<td><strong>Waterfall</strong></td>
-<td>Modelo secuencial lineal.</td>
-<td>Requisitos → Diseño → Desarrollo → Pruebas → Implementación.</td>
-<td>Claridad y documentación detallada.</td>
-<td>Poca flexibilidad ante cambios.</td>
-<td>Manufactura.</td>
-</tr>
-
-<tr>
-<td><strong>PRINCE2</strong></td>
-<td>Metodología estructurada basada en principios.</td>
-<td>Inicio, Control por etapas, Dirección, Cierre.</td>
-<td>Fuerte control organizacional.</td>
-<td>Alta carga administrativa.</td>
-<td>Sector público.</td>
-</tr>
-
-<tr>
-<td><strong>Scrum</strong></td>
-<td>Marco ágil basado en iteraciones (sprints).</td>
-<td>Planificación, Sprint, Revisión, Retrospectiva.</td>
-<td>Alta adaptabilidad.</td>
-<td>Requiere equipo comprometido.</td>
-<td>Software.</td>
-</tr>
-
-<tr>
-<td><strong>XP</strong></td>
-<td>Metodología ágil centrada en calidad técnica.</td>
-<td>Iteraciones cortas y pruebas constantes.</td>
-<td>Alta calidad del producto.</td>
-<td>Exige disciplina técnica.</td>
-<td>Aplicaciones web.</td>
-</tr>
-
-<tr>
-<td><strong>APF</strong></td>
-<td>Framework adaptable a cambios constantes.</td>
-<td>Ciclos iterativos adaptativos.</td>
-<td>Flexibilidad total.</td>
-<td>Menor formalidad documental.</td>
-<td>Startups.</td>
-</tr>
-
-<tr>
-<td><strong>Design Thinking</strong></td>
-<td>Enfoque centrado en el usuario.</td>
-<td>Empatizar, Definir, Idear, Prototipar, Testear.</td>
-<td>Fomenta innovación.</td>
-<td>No sustituye gestión formal.</td>
-<td>Desarrollo de productos innovadores.</td>
-</tr>
-
+<tr><th>Metodología</th><th>Definición</th><th>Fases / Procesos</th><th>Ventajas</th><th>Limitaciones</th><th>Ejemplo</th></tr>
+<tr><td><strong>PMBOK</strong></td><td>Guía de buenas prácticas estructurada por procesos.</td><td>Inicio, Planear, Ejecutar, Monitorear, Cerrar</td><td>Estandarización y control</td><td>Rigidez ante cambios</td><td>Ingeniería, construcción</td></tr>
+<tr><td><strong>Waterfall</strong></td><td>Modelo secuencial tradicional.</td><td>Requisitos → Diseño → Implementación → Pruebas → Entrega</td><td>Claridad en entregables</td><td>Poca adaptabilidad</td><td>Manufactura</td></tr>
+<tr><td><strong>PRINCE2</strong></td><td>Metodología por procesos con roles definidos y control.</td><td>Inicio, Control por etapas, Dirección, Cierre</td><td>Fuerte gobernanza</td><td>Burocracia</td><td>Sector público</td></tr>
+<tr><td><strong>Scrum</strong></td><td>Marco ágil basado en sprints.</td><td>Sprint Planning, Daily, Sprint Review, Retrospective</td><td>Entrega frecuente y adaptación</td><td>Necesita equipo maduro</td><td>Desarrollo software</td></tr>
+<tr><td><strong>XP</strong></td><td>Prácticas técnicas ágiles (TDD, pair programming).</td><td>Iteraciones cortas, pruebas continuas</td><td>Calidad técnica alta</td><td>Requiere disciplina técnica</td><td>Aplicaciones web</td></tr>
+<tr><td><strong>APF</strong></td><td>Framework adaptable para entornos de alta incertidumbre.</td><td>Ciclos adaptativos</td><td>Muy flexible</td><td>Menos documentación</td><td>Proyectos innovadores</td></tr>
+<tr><td><strong>Design Thinking</strong></td><td>Enfoque centrado en el usuario para innovación.</td><td>Empatizar → Definir → Idear → Prototipar → Testear</td><td>Creatividad y foco en usuario</td><td>No reemplaza gestión formal</td><td>Diseño de productos</td></tr>
 </table>
-
 </section>
 
-<section id="reflexion">
-<h2>Reflexión Personal</h2>
-
-<p>
-El proceso de innovación impacta directamente en la gestión de proyectos porque transforma ideas abstractas en resultados concretos mediante una estructura organizada. Cada fase requiere planificación estratégica, asignación eficiente de recursos y evaluación constante de riesgos. La Administración de Proyectos permite que la innovación no sea improvisada, sino controlada y medible. Asimismo, las metodologías ágiles demuestran que la flexibilidad es clave en entornos cambiantes, mientras que las metodologías tradicionales aportan estructura y control. Considero que integrar ambas perspectivas fortalece la capacidad organizacional para competir en mercados dinámicos, asegurando calidad, cumplimiento de objetivos y generación de valor sostenible.
-</p>
-
+<section class="map-card" id="reflex">
+<h2>Reflexión personal (para el PDF)</h2>
+<p>El proceso de innovación impacta directamente en la gestión de proyectos porque transforma ideas en entregables mediante fases estructuradas. Integrar herramientas de planificación y control con prácticas ágiles permite a las organizaciones mantener la calidad y la adaptabilidad. En proyectos con alta incertidumbre, aplicar ciclos iterativos y validaciones tempranas reduce el riesgo. La convergencia entre enfoques tradicionales y ágiles produce mejores resultados cuando se aplican según contexto, recursos y objetivos estratégicos.</p>
 </section>
 
-<footer>
-© 2026 – Proyecto académico UABC
-</footer>
-
+</main>
+<footer>© 2026 – Proyecto académico UABC</footer>
 </body>
 </html>
+```
+
+---
+
+<!-- FILE: fuentes.html -->
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fuentes</title>
+<style>body{font-family:Inter,Segoe UI,Arial;margin:0;background:#f4f6f9}header{background:#1e3a5f;color:#fff;padding:20px;text-align:center}main{max-width:900px;margin:24px auto;background:#fff;padding:24px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}h2{color:#1e3a5f}</style>
+</head>
+<body>
+<header><h1>Fuentes y referencias (APA)</h1></header>
+<nav style="background:#16324f;padding:8px;text-align:center"><a href="index.html" style="color:#fff">Inicio</a></nav>
+<main>
+<h2>Referencias</h2>
+<p>Project Management Institute. (2021). <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide)</em> – 7th Edition.</p>
+<p>Highsmith, J. (2009). <em>Agile Project Management: Creating Innovative Products</em>. Addison-Wesley.</p>
+<p>Beck, K. (2004). <em>Extreme Programming Explained: Embrace Change</em>. Addison-Wesley.</p>
+</main>
+</body>
+</html>
+```
+
+---
+
+## Qué hice y por qué
+- Restauré el *contenido académico* anterior (introducción, elementos, ciclo, roles, herramientas) y lo dejé en páginas separadas para que **no todo esté en una sola página**.  
+- Mejoré el mapa mental con un SVG más limpio y etiquetas en cajas (líneas y nodos visibles).  
+- Añadí diseño consistente y profesional en cada página (estructura, tarjetas, navegación).  
+
+## Qué debes hacer ahora (pasos concretos)
+1. Abre tu repositorio en GitHub.  
+2. Para cada archivo listado arriba: `Add file → Create new file` → pega el bloque de código correspondiente (puedes copiarlo desde este documento).  
+3. Asegúrate de nombrar exactamente (por ejemplo `metodologias.html`).  
+4. Commit changes (mensaje: "Agregar archivos CE1.2").  
+5. Espera 30–60s y recarga tu sitio: `https://garciajorge13-sudo.github.io/administracion-proyectos/`  
+
+## Siguientes entregables que puedo hacer por ti (si quieres)
+- Crear el PDF final con: mapa mental PNG+reflexión+APA (listo para subir a Blackboard).  
+- Generarte la captura principal optimizada (si quieres te explico cómo tomarla con buena resolución).  
+
+Listo — ya integré lo viejo con lo nuevo y organicé en páginas separadas. Ve a tu repo y pega los archivos. Si quieres, te guío pegando uno por uno en tiempo real.
