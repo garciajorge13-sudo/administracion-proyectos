@@ -17,23 +17,28 @@
     header{background:var(--prim); color:white; padding:20px 16px; text-align:center}
     header h1{margin:0; font-size:24px}
     header p{margin:6px 0 0; font-size:14px; opacity:0.95}
-    nav{background:var(--prim-dark); padding:10px 0; text-align:center; position:sticky; top:0; z-index:20}
-    nav a{color:white; margin:0 14px; text-decoration:none; font-weight:600; font-size:14px}
+    nav{background:var(--prim-dark); padding:10px 0; text-align:center; position:sticky; top:0; z-index:50}
+    nav a{color:white; margin:0 12px; text-decoration:none; font-weight:600; font-size:14px}
     nav a:hover{text-decoration:underline}
     main{max-width:1000px; margin:24px auto; padding:0 16px 40px}
     section{background:var(--card); border-radius:10px; padding:26px; margin:20px 0; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
     h2{color:var(--prim); margin-top:0; border-bottom:2px solid #e6eef8; padding-bottom:8px}
     ul{line-height:1.8}
     .map-wrapper{display:flex; justify-content:center; align-items:center; padding:14px 0}
-    svg{max-width:100%; height:auto}
+    svg{max-width:100%; height:auto; display:block}
     table{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px}
     th, td{border:1px solid #d0d7de; padding:10px; vertical-align:top}
     th{background:var(--prim); color:white; text-align:left}
     footer{background:var(--prim); color:white; text-align:center; padding:14px; margin-top:18px}
+    /* SVG text sizing responsive */
+    .svg-label{font-family:inherit; font-weight:600; fill:#1b2430; font-size:13px}
+    .svg-center{font-family:inherit; font-weight:700; fill:#fff; font-size:18px}
     @media (max-width:700px){
       header h1{font-size:20px}
       nav a{display:inline-block; margin:6px 8px}
       section{padding:18px}
+      .svg-label{font-size:11px}
+      .svg-center{font-size:16px}
     }
   </style>
 </head>
@@ -51,6 +56,7 @@
     <a href="#ciclo">Ciclo de vida</a>
     <a href="#roles">Roles</a>
     <a href="#herramientas">Herramientas</a>
+    <a href="#mapa">Mapa mental</a> <!-- menú con Mapa mental -->
     <a href="#metodologias">Metodologías</a>
     <a href="#fuentes">Fuentes</a>
   </nav>
@@ -113,79 +119,83 @@
       </ul>
     </section>
 
-    <!-- METODOLOGÍAS (mapa + tabla) -->
-    <section id="metodologias">
+    <!-- MAPA (mejorado, centrado y simétrico) -->
+    <section id="mapa">
       <h2>Mapa mental — Proceso de Innovación</h2>
 
       <div class="map-wrapper" aria-hidden="false">
-        <!-- SVG: mapa mental radial (mejorado) -->
-        <svg viewBox="0 0 1000 520" width="100%" height="auto" role="img" aria-label="Mapa mental proceso de innovación">
+        <!-- SVG optimizado: nodos distribuidos uniformemente alrededor del centro -->
+        <svg viewBox="0 0 1000 560" width="100%" role="img" aria-label="Mapa mental proceso de innovación">
           <defs>
-            <filter id="drop" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.12"/>
-            </filter>
             <style>
-              .cent-text{fill:#fff;font-weight:700;font-size:18px;font-family:inherit}
-              .lbl{fill:#1b2430;font-size:13px;font-weight:600;font-family:inherit}
-              .box{fill:#fff;stroke:#d6dbe1;rx:8;ry:8}
-              .connector{stroke:#2e2e2e;stroke-width:2;stroke-linecap:round}
+              .center { fill:#1e3a5f; }
+              .center-text { fill:#fff; font-weight:700; font-family:inherit; font-size:18px; text-anchor:middle; }
+              .box { fill:#fff; stroke:#d6dbe1; rx:8; ry:8; }
+              .label { font-family:inherit; fill:#1b2430; font-weight:700; font-size:13px; text-anchor:middle; }
+              .connector { stroke:#2e2e2e; stroke-width:2; stroke-linecap:round; fill:none; }
             </style>
           </defs>
 
-          <!-- Central node -->
-          <g filter="url(#drop)">
-            <circle cx="500" cy="260" r="90" fill="#1e3a5f"/>
-            <text x="500" y="250" class="cent-text" text-anchor="middle">Proceso de</text>
-            <text x="500" y="275" class="cent-text" text-anchor="middle">Innovación</text>
+          <!-- central node -->
+          <g>
+            <circle cx="500" cy="280" r="90" class="center" filter="url(#)"/>
+            <text x="500" y="272" class="center-text">Proceso de</text>
+            <text x="500" y="296" class="center-text">Innovación</text>
           </g>
 
-          <!-- Top -->
-          <path d="M500 180 L500 110" class="connector"/>
-          <rect x="420" y="64" width="160" height="36" class="box"/>
-          <text x="500" y="88" class="lbl" text-anchor="middle">Identificación de oportunidades</text>
+          <!-- nodes coordinates (evenly placed) -->
+          <!-- top -->
+          <path d="M500 190 L500 125" class="connector"/>
+          <rect x="420" y="88" width="160" height="36" class="box"/>
+          <text x="500" y="110" class="label">Identificación de oportunidades</text>
 
-          <!-- Top-right -->
-          <path d="M560 230 C640 190, 700 170, 740 140" class="connector"/>
-          <rect x="710" y="120" width="190" height="36" class="box"/>
-          <text x="805" y="144" class="lbl" text-anchor="middle">Generación de ideas</text>
+          <!-- top-right -->
+          <path d="M560 230 C620 200, 700 170, 760 140" class="connector"/>
+          <rect x="720" y="120" width="200" height="36" class="box"/>
+          <text x="820" y="142" class="label">Generación de ideas</text>
 
-          <!-- Right -->
-          <path d="M590 300 C660 300, 770 300, 760 340" class="connector"/>
-          <rect x="720" y="330" width="170" height="36" class="box"/>
-          <text x="805" y="353" class="lbl" text-anchor="middle">Implementación</text>
+          <!-- right -->
+          <path d="M600 300 C660 300, 760 300, 780 350" class="connector"/>
+          <rect x="720" y="330" width="160" height="36" class="box"/>
+          <text x="800" y="352" class="label">Implementación</text>
 
-          <!-- Bottom-right -->
-          <path d="M520 330 C580 360, 640 420, 640 500" class="connector"/>
-          <rect x="600" y="482" width="240" height="36" class="box"/>
-          <text x="720" y="505" class="lbl" text-anchor="middle">Evaluación y selección</text>
+          <!-- bottom-right -->
+          <path d="M530 345 C590 370, 650 420, 640 500" class="connector"/>
+          <rect x="560" y="482" width="220" height="36" class="box"/>
+          <text x="670" y="504" class="label">Evaluación y selección</text>
 
-          <!-- Bottom -->
-          <path d="M450 330 C430 380, 430 420, 500 460" class="connector"/>
+          <!-- bottom -->
+          <path d="M470 345 C430 380, 420 430, 500 470" class="connector"/>
           <rect x="380" y="482" width="240" height="36" class="box"/>
-          <text x="500" y="505" class="lbl" text-anchor="middle">Evaluación de resultados</text>
+          <text x="500" y="504" class="label">Evaluación de resultados</text>
 
-          <!-- Bottom-left -->
-          <path d="M420 300 C360 350, 260 420, 200 480" class="connector"/>
-          <rect x="120" y="476" width="190" height="36" class="box"/>
-          <text x="215" y="499" class="lbl" text-anchor="middle">Desarrollo del proyecto</text>
+          <!-- bottom-left -->
+          <path d="M420 300 C360 330, 300 380, 220 440" class="connector"/>
+          <rect x="120" y="430" width="200" height="36" class="box"/>
+          <text x="220" y="452" class="label">Desarrollo del proyecto</text>
 
-          <!-- Left -->
-          <path d="M420 280 C360 270, 260 270, 200 260" class="connector"/>
+          <!-- left -->
+          <path d="M420 260 C360 260, 300 260, 240 260" class="connector"/>
           <rect x="120" y="300" width="240" height="36" class="box"/>
-          <text x="240" y="323" class="lbl" text-anchor="middle">Planificación y recursos</text>
+          <text x="240" y="322" class="label">Planificación y recursos</text>
 
-          <!-- Top-left -->
-          <path d="M430 220 C360 190, 300 170, 220 140" class="connector"/>
-          <rect x="160" y="120" width="210" height="36" class="box"/>
-          <text x="265" y="143" class="lbl" text-anchor="middle">Validación y prototipos</text>
+          <!-- top-left -->
+          <path d="M450 220 C400 200, 340 180, 260 150" class="connector"/>
+          <rect x="160" y="132" width="200" height="36" class="box"/>
+          <text x="260" y="154" class="label">Validación y prototipos</text>
+
         </svg>
       </div>
 
       <p style="margin-top:14px; color:var(--muted);">
-        El mapa mental visualiza las etapas del proceso de innovación y su relación con la Administración de Proyectos. Cada nodo requiere herramientas de planificación, gestión de riesgos y comunicación para transformar ideas en resultados.
+        El mapa mental visualiza de forma simétrica las etapas del proceso de innovación y su relación con la Administración de Proyectos. Cada nodo debe gestionarse con planificación, gestión de riesgos y comunicación para transformar ideas en resultados concretos.
       </p>
 
-      <h2 style="margin-top:28px;">Cuadro comparativo — Metodologías</h2>
+    </section>
+
+    <!-- METODOLOGÍAS -->
+    <section id="metodologias">
+      <h2>Cuadro comparativo — Metodologías</h2>
       <table>
         <tr>
           <th>Metodología</th>
@@ -196,52 +206,22 @@
           <th>Ejemplo</th>
         </tr>
         <tr>
-          <td>PMBOK (PMI)</td>
-          <td>Tradicional</td>
-          <td>Inicio, planificación, ejecución, monitoreo, cierre</td>
-          <td>Estructura y control</td>
-          <td>Rigidez frente a cambios</td>
-          <td>Infraestructura</td>
+          <td>PMBOK (PMI)</td><td>Tradicional</td><td>Inicio, planificación, ejecución, monitoreo, cierre</td><td>Estructura y control</td><td>Rigidez</td><td>Infraestructura</td>
         </tr>
         <tr>
-          <td>Waterfall</td>
-          <td>Tradicional</td>
-          <td>Secuencial</td>
-          <td>Claridad en entregables</td>
-          <td>Poca flexibilidad</td>
-          <td>Construcción</td>
+          <td>Waterfall</td><td>Tradicional</td><td>Secuencial</td><td>Claridad</td><td>Poca flexibilidad</td><td>Construcción</td>
         </tr>
         <tr>
-          <td>PRINCE2</td>
-          <td>Tradicional</td>
-          <td>Control por etapas, roles definidos</td>
-          <td>Fuerte gobernanza</td>
-          <td>Alta documentación</td>
-          <td>Sector público</td>
+          <td>PRINCE2</td><td>Tradicional</td><td>Control por etapas</td><td>Gobernanza</td><td>Documentación</td><td>Sector público</td>
         </tr>
         <tr>
-          <td>Scrum</td>
-          <td>Ágil</td>
-          <td>Sprints: plan, daily, review, retrospective</td>
-          <td>Adaptabilidad y entregas frecuentes</td>
-          <td>Requiere equipo maduro</td>
-          <td>Software</td>
+          <td>Scrum</td><td>Ágil</td><td>Sprints, backlog</td><td>Adaptabilidad</td><td>Requiere equipo maduro</td><td>Software</td>
         </tr>
         <tr>
-          <td>Extreme Programming (XP)</td>
-          <td>Ágil</td>
-          <td>Iteraciones cortas, TDD, pair programming</td>
-          <td>Alta calidad técnica</td>
-          <td>Exige disciplina técnica</td>
-          <td>Aplicaciones web</td>
+          <td>XP</td><td>Ágil</td><td>Iteraciones cortas, TDD</td><td>Calidad técnica</td><td>Disciplina técnica</td><td>Apps web</td>
         </tr>
         <tr>
-          <td>Design Thinking</td>
-          <td>Ágil</td>
-          <td>Empatizar → Definir → Idear → Prototipar → Probar</td>
-          <td>Foco en usuario e innovación</td>
-          <td>No es en sí una gestión formal</td>
-          <td>Innovación de productos</td>
+          <td>Design Thinking</td><td>Ágil</td><td>Empatizar → Idear → Prototipar</td><td>Foco en usuario</td><td>No es gestión formal</td><td>Innovación</td>
         </tr>
       </table>
     </section>
@@ -249,9 +229,9 @@
     <!-- FUENTES -->
     <section id="fuentes">
       <h2>Fuentes</h2>
-      <p>Project Management Institute. (2021). <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide)</em>, 7th Edition.</p>
-      <p>Highsmith, J. (2009). <em>Agile Project Management: Creating Innovative Products</em>. Addison-Wesley.</p>
-      <p>Beck, K. (2004). <em>Extreme Programming Explained: Embrace Change</em>. Addison-Wesley.</p>
+      <p>Project Management Institute. (2021). <em>A Guide to the PMBOK® Guide</em>, 7ª ed.</p>
+      <p>Highsmith, J. (2009). <em>Agile Project Management</em>. Addison-Wesley.</p>
+      <p>Beck, K. (2004). <em>Extreme Programming Explained</em>. Addison-Wesley.</p>
     </section>
 
   </main>
