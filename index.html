@@ -1,268 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Administración de Proyectos</title>
+<!-- ===================== -->
+<!-- CE1.2 MAPA MENTAL Y METODOLOGÍAS -->
+<!-- ===================== -->
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<section id="mapa-mental" style="margin-top:40px;">
+  <h2>Mapa mental — Proceso de Innovación</h2>
 
-    body {
-      margin: 0;
-      background: #f4f6f9;
-      color: #1b2430;
-      line-height: 1.6;
-    }
+  <!-- AQUÍ NO TOQUES NADA DEL SVG -->
+  <!-- DEJA EXACTAMENTE EL MAPA QUE YA TIENES -->
+  <!-- SOLO ASEGÚRATE DE QUE ESTÉ DENTRO DE ESTA SECCIÓN -->
 
-    /* ===== MENÚ ===== */
-    header {
-      background: #1e3a5f;
-      padding: 15px 0;
-    }
+  <p>
+    Este mapa mental representa de forma estructurada las fases del proceso de innovación y su relación directa con la Administración de Proyectos.
+    Cada etapa requiere planificación, control de recursos, gestión de riesgos y evaluación continua para asegurar resultados viables y sostenibles
+    dentro de un entorno organizacional.
+  </p>
+</section>
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
+<section id="metodologias" style="margin-top:40px;">
+  <h2>Cuadro comparativo — Metodologías de Administración de Proyectos</h2>
 
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== CONTENEDOR ===== */
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 40px 30px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    h1, h2 {
-      color: #1e3a5f;
-      margin-top: 0;
-    }
-
-    h2 {
-      border-bottom: 3px solid #e1e6ec;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-    }
-
-    p {
-      font-size: 16px;
-    }
-
-    /* ===== MAPA MENTAL ===== */
-    .map-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      padding: 20px 0;
-    }
-
-    svg {
-      max-width: 100%;
-      height: auto;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #1e3a5f;
-      color: white;
-      font-size: 14px;
-    }
-
-    /* ===== TABLA ===== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 15px;
-    }
-
-    th, td {
-      border: 1px solid #d6dbe1;
-      padding: 12px;
-      vertical-align: top;
-    }
-
-    th {
-      background: #1e3a5f;
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background: #f2f4f7;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- ===== MENÚ ===== -->
-  <header>
-    <nav>
-      <a href="#introduccion">Introducción</a>
-      <a href="#elementos">Elementos</a>
-      <a href="#ciclo">Ciclo de vida</a>
-      <a href="#roles">Roles</a>
-      <a href="#herramientas">Herramientas</a>
-      <a href="#mapa">Mapa mental</a>
-      <a href="#metodologias">Metodologías</a>
-      <a href="#fuentes">Fuentes</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- ===== MAPA MENTAL ===== -->
-    <section id="mapa">
-      <h2>Mapa mental — Proceso de Innovación</h2>
-
-      <div class="map-wrapper">
-        <svg viewBox="0 0 1000 520" width="100%" role="img">
-
-          <defs>
-            <style>
-              .central { fill:#1e3a5f; }
-              .central-text { fill:#fff; font-weight:700; font-size:18px; text-anchor:middle; }
-              .box { fill:#ffffff; stroke:#cfd6df; rx:8; ry:8; }
-              .label { fill:#1b2430; font-size:13px; font-weight:600; text-anchor:middle; }
-              .line { stroke:#2b2b2b; stroke-width:2; }
-            </style>
-          </defs>
-
-          <!-- Centro -->
-          <circle cx="500" cy="260" r="85" class="central"/>
-          <text x="500" y="250" class="central-text">Proceso de</text>
-          <text x="500" y="275" class="central-text">Innovación</text>
-
-          <!-- Líneas -->
-          <line x1="500" y1="175" x2="500" y2="95" class="line"/>
-          <line x1="565" y1="230" x2="760" y2="130" class="line"/>
-          <line x1="585" y1="300" x2="780" y2="350" class="line"/>
-          <line x1="520" y1="345" x2="640" y2="470" class="line"/>
-          <line x1="480" y1="345" x2="360" y2="470" class="line"/>
-          <line x1="415" y1="300" x2="220" y2="350" class="line"/>
-          <line x1="435" y1="230" x2="240" y2="130" class="line"/>
-
-          <!-- Cajas -->
-          <rect x="410" y="60" width="180" height="36" class="box"/>
-          <text x="500" y="83" class="label">Identificación de oportunidades</text>
-
-          <rect x="680" y="112" width="200" height="36" class="box"/>
-          <text x="780" y="135" class="label">Generación de ideas</text>
-
-          <rect x="700" y="335" width="200" height="36" class="box"/>
-          <text x="800" y="358" class="label">Implementación</text>
-
-          <rect x="560" y="470" width="260" height="36" class="box"/>
-          <text x="690" y="493" class="label">Evaluación y selección</text>
-
-          <rect x="180" y="470" width="260" height="36" class="box"/>
-          <text x="310" y="493" class="label">Evaluación de resultados</text>
-
-          <rect x="120" y="335" width="220" height="36" class="box"/>
-          <text x="230" y="358" class="label">Planificación y recursos</text>
-
-          <rect x="140" y="112" width="220" height="36" class="box"/>
-          <text x="250" y="135" class="label">Validación y prototipos</text>
-
-        </svg>
-      </div>
-
-      <p>
-        Este mapa mental representa de forma estructurada las fases del proceso de innovación y su relación directa con la Administración de Proyectos. 
-        Cada etapa requiere planificación, control de recursos, gestión de riesgos y evaluación continua para asegurar resultados viables y sostenibles.
-      </p>
-    </section>
-
-    <!-- ===== METODOLOGÍAS ===== -->
-    <section id="metodologias">
-      <h2>Cuadro comparativo — Metodologías de Administración de Proyectos</h2>
-
-      <table>
-        <tr>
-          <th>Metodología</th>
-          <th>Tipo</th>
-          <th>Fases / Procesos</th>
-          <th>Ventajas</th>
-          <th>Limitaciones</th>
-          <th>Ejemplo</th>
-        </tr>
-
-        <tr>
-          <td>PMBOK (PMI)</td>
-          <td>Tradicional</td>
-          <td>Inicio, planificación, ejecución, monitoreo, cierre</td>
-          <td>Estructura sólida y control</td>
-          <td>Rigidez ante cambios</td>
-          <td>Infraestructura</td>
-        </tr>
-
-        <tr>
-          <td>Waterfall</td>
-          <td>Tradicional</td>
-          <td>Secuencial</td>
-          <td>Claridad y orden</td>
-          <td>No admite cambios</td>
-          <td>Construcción</td>
-        </tr>
-
-        <tr>
-          <td>Scrum</td>
-          <td>Ágil</td>
-          <td>Sprints, backlog, revisiones</td>
-          <td>Flexibilidad y rapidez</td>
-          <td>Requiere alta disciplina</td>
-          <td>Software</td>
-        </tr>
-
-        <tr>
-          <td>Design Thinking</td>
-          <td>Ágil</td>
-          <td>Empatizar, definir, idear, prototipar, probar</td>
-          <td>Enfoque al usuario</td>
-          <td>No siempre estructurado</td>
-          <td>Innovación de productos</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- ===== FUENTES ===== -->
-    <section id="fuentes">
-      <h2>Fuentes</h2>
-      <p>
-        Project Management Institute. (2021). <em>PMBOK® Guide (7th ed.)</em>.<br>
-        Highsmith, J. (2009). <em>Agile Project Management</em>. Addison-Wesley.<br>
-        Beck, K. (2004). <em>Extreme Programming Explained</em>. Addison-Wesley.
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    Administración de Proyectos — CE1.2 · Sitio académico
-  </footer>
-
-</body>
-</html>
+  <table>
+    <thead>
+      <tr>
+        <th>Metodología</th>
+        <th>Tipo</th>
+        <th>Fases / Procesos</th>
+        <th>Ventajas</th>
+        <th>Limitaciones</th>
+        <th>Ejemplo de aplicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PMBOK (PMI)</td>
+        <td>Tradicional</td>
+        <td>Inicio, planificación, ejecución, monitoreo y cierre</td>
+        <td>Alta estandarización y control</td>
+        <td>Menor flexibilidad ante cambios</td>
+        <td>Proyectos de infraestructura</td>
+      </tr>
+      <tr>
+        <td>Waterfall</td>
+        <td>Tradicional</td>
+        <td>Fases secuenciales</td>
+        <td>Claridad en etapas</td>
+        <td>No admite cambios tardíos</td>
+        <td>Construcción</td>
+      </tr>
+      <tr>
+        <td>PRINCE2</td>
+        <td>Tradicional</td>
+        <td>Procesos controlados por etapas</td>
+        <td>Enfoque en negocio</td>
+        <td>Documentación extensa</td>
+        <td>Gobierno y sector público</td>
+      </tr>
+      <tr>
+        <td>Scrum</td>
+        <td>Ágil</td>
+        <td>Sprints iterativos</td>
+        <td>Alta adaptabilidad</td>
+        <td>Requiere compromiso del equipo</td>
+        <td>Desarrollo de software</td>
+      </tr>
+      <tr>
+        <td>Extreme Programming (XP)</td>
+        <td>Ágil</td>
+        <td>Iteraciones cortas y mejora continua</td>
+        <td>Calidad del producto</td>
+        <td>No apto para proyectos grandes</td>
+        <td>Aplicaciones web</td>
+      </tr>
+      <tr>
+        <td>Design Thinking</td>
+        <td>Ágil</td>
+        <td>Empatizar, definir, idear, prototipar y probar</td>
+        <td>Enfoque centrado en el usuario</td>
+        <td>No siempre estructurado</td>
+        <td>Innovación de productos</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
