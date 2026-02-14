@@ -1,217 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Administración de Proyectos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Administración de Proyectos – Unidad I</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
+    :root{
+      --prim:#1f3c88;
+      --dark:#162447;
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --muted:#5b6b7a;
     }
-
-    header {
-      background: #1f3c88;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #162a5c;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      background: #1f3c88;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-    }
-
-    h2 {
-      color: #1f3c88;
-      border-bottom: 3px solid #e0e6f0;
-      padding-bottom: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-
-    th {
-      background: #1f3c88;
-      color: white;
-    }
-
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
-
-    footer {
-      background: #1f3c88;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+    *{box-sizing:border-box}
+    body{font-family: "Segoe UI", Arial, sans-serif; margin:0; background:var(--bg); color:#222}
+    header{background:var(--prim); color:white; padding:22px 16px; text-align:center}
+    header h1{margin:0; font-size:24px}
+    header p{margin:6px 0 0; font-size:14px; opacity:0.95}
+    nav{background:var(--dark); padding:10px 0; text-align:center; position:sticky; top:0; z-index:50}
+    nav a{color:white; margin:0 12px; text-decoration:none; font-weight:600; font-size:14px}
+    nav a:hover{text-decoration:underline}
+    main{max-width:1000px; margin:24px auto; padding:0 16px 40px}
+    section{background:var(--card); border-radius:10px; padding:24px; margin:20px 0; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    h2{color:var(--prim); margin-top:0; border-bottom:2px solid #e6eef8; padding-bottom:8px}
+    ul{line-height:1.8}
+    .map-wrapper{display:flex; justify-content:center; align-items:center; padding:14px 0;}
+    svg{max-width:100%; height:auto; display:block}
+    table{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px}
+    th, td{border:1px solid #d0d7de; padding:10px; vertical-align:top}
+    th{background:var(--prim); color:white; text-align:left}
+    footer{background:var(--prim); color:white; text-align:center; padding:14px; margin-top:18px}
+    @media (max-width:700px){
+      header h1{font-size:20px}
+      nav a{display:inline-block; margin:6px 8px}
+      section{padding:16px}
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Administración de Proyectos</h1>
-  <p>Unidad I · Fundamentos</p>
-</header>
+  <header>
+    <h1>Administración de Proyectos</h1>
+    <p><strong>Alumno:</strong> Jorge Emilio Garcia Raygoza — Materia: Administración de Proyectos — Unidad I</p>
+  </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#conceptos">Conceptos</a>
-  <a href="#tabla">Tabla comparativa</a>
-  <a href="#mapa">Mapa mental</a>
-  <a href="#fuentes">Fuentes</a>
-</nav>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#introduccion">Introducción</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#ciclo">Ciclo de vida</a>
+    <a href="#roles">Roles</a>
+    <a href="#herramientas">Herramientas</a>
+    <a href="#mapa">Mapa mental</a>
+    <a href="#metodologias">Metodologías</a>
+    <a href="#fuentes">Fuentes</a>
+  </nav>
 
-<section id="inicio">
-  <h2>Introducción</h2>
-  <p>
-    La Administración de Proyectos es una disciplina clave que permite planificar,
-    organizar y controlar recursos para alcanzar objetivos específicos dentro de un
-    tiempo determinado. Su aplicación es fundamental en procesos de innovación,
-    desarrollo empresarial y mejora continua.
-  </p>
-</section>
+  <main>
 
-<section id="conceptos">
-  <h2>Conceptos básicos</h2>
-  <p>
-    Un proyecto es un esfuerzo temporal que se lleva a cabo para crear un producto,
-    servicio o resultado único. La administración de proyectos integra conocimientos,
-    habilidades y herramientas para cumplir con los requisitos del proyecto.
-  </p>
-</section>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>Este sitio integra los conceptos esenciales de la Administración de Proyectos (Unidad I) y presenta un mapa mental del proceso de innovación junto con un cuadro comparativo de metodologías tradicionales y ágiles (CE1.1 / CE1.2).</p>
+    </section>
 
-<section id="tabla">
-  <h2>Relación entre Innovación y Administración de Proyectos</h2>
+    <section id="introduccion">
+      <h2>Introducción a la Administración de Proyectos</h2>
+      <p><strong>Definición:</strong> La Administración de Proyectos es la aplicación de conocimientos, habilidades, herramientas y técnicas para lograr los objetivos del proyecto.</p>
+      <p><strong>¿Qué es un proyecto?</strong> Es un esfuerzo temporal para crear un producto, servicio o resultado único.</p>
+    </section>
 
-  <table>
-    <tr>
-      <th>Etapa de Innovación</th>
-      <th>Aplicación en Proyectos</th>
-    </tr>
-    <tr>
-      <td>Identificación de oportunidades</td>
-      <td>Análisis de necesidades y definición de objetivos</td>
-    </tr>
-    <tr>
-      <td>Generación de ideas</td>
-      <td>Lluvia de ideas y evaluación de alternativas</td>
-    </tr>
-    <tr>
-      <td>Planificación y recursos</td>
-      <td>Asignación de presupuesto, tiempo y personal</td>
-    </tr>
-    <tr>
-      <td>Desarrollo del proyecto</td>
-      <td>Ejecución y seguimiento de actividades</td>
-    </tr>
-    <tr>
-      <td>Evaluación de resultados</td>
-      <td>Control de calidad y cierre del proyecto</td>
-    </tr>
-  </table>
-</section>
+    <section id="elementos">
+      <h2>Elementos clave</h2>
+      <ul>
+        <li><strong>Objetivos:</strong> Resultados esperados.</li>
+        <li><strong>Alcance:</strong> Entregables y límites.</li>
+        <li><strong>Tiempo:</strong> Cronograma y hitos.</li>
+        <li><strong>Costo:</strong> Presupuesto.</li>
+        <li><strong>Calidad:</strong> Estándares a cumplir.</li>
+        <li><strong>Riesgos:</strong> Identificación y respuesta.</li>
+        <li><strong>Stakeholders:</strong> Partes interesadas.</li>
+      </ul>
+    </section>
 
-<section id="mapa">
-  <h2>Mapa mental — Proceso de Innovación</h2>
+    <section id="ciclo">
+      <h2>Ciclo de vida del proyecto</h2>
+      <p>Inicio → Planeación → Ejecución → Monitoreo y control → Cierre.</p>
+    </section>
 
-  <div style="overflow-x:auto; display:flex; justify-content:center;">
-    <svg width="900" height="520" viewBox="0 0 900 520">
+    <section id="roles">
+      <h2>Roles y responsabilidades</h2>
+      <ul>
+        <li><strong>Director del proyecto:</strong> Liderazgo, planificación y seguimiento.</li>
+        <li><strong>Equipo:</strong> Ejecución técnica.</li>
+        <li><strong>Patrocinador:</strong> Provisión de recursos.</li>
+        <li><strong>Stakeholders:</strong> Interesados y su gestión.</li>
+      </ul>
+    </section>
 
-      <circle cx="450" cy="260" r="90" fill="#1f3c88"/>
-      <text x="450" y="255" fill="white" font-size="18" font-weight="bold" text-anchor="middle">Proceso de</text>
-      <text x="450" y="280" fill="white" font-size="18" font-weight="bold" text-anchor="middle">Innovación</text>
+    <section id="herramientas">
+      <h2>Herramientas básicas</h2>
+      <ul>
+        <li>EDT (Estructura de Desglose de Trabajo)</li>
+        <li>Diagrama de Gantt</li>
+        <li>Matriz de riesgos</li>
+        <li>Plan de comunicación</li>
+      </ul>
+    </section>
 
-      <line x1="450" y1="170" x2="450" y2="90" stroke="black" stroke-width="2"/>
-      <line x1="520" y1="210" x2="720" y2="120" stroke="black" stroke-width="2"/>
-      <line x1="540" y1="260" x2="760" y2="260" stroke="black" stroke-width="2"/>
-      <line x1="520" y1="320" x2="720" y2="400" stroke="black" stroke-width="2"/>
-      <line x1="450" y1="350" x2="450" y2="450" stroke="black" stroke-width="2"/>
-      <line x1="380" y1="320" x2="180" y2="400" stroke="black" stroke-width="2"/>
-      <line x1="360" y1="260" x2="140" y2="260" stroke="black" stroke-width="2"/>
-      <line x1="380" y1="210" x2="180" y2="120" stroke="black" stroke-width="2"/>
+    <!-- MAPA MENTAL (la versión estable y centrada que te gustó) -->
+    <section id="mapa">
+      <h2>Mapa mental — Proceso de Innovación</h2>
 
-      <rect x="330" y="50" width="240" height="40" fill="white" stroke="black"/>
-      <text x="450" y="75" text-anchor="middle" font-weight="bold">Identificación de oportunidades</text>
+      <div class="map-wrapper" aria-hidden="false">
+        <svg viewBox="0 0 1000 520" width="100%" height="auto" role="img" aria-label="Mapa mental proceso de innovación">
+          <defs>
+            <style>
+              .center { fill:#1e3a5f; }
+              .center-text { fill:#fff; font-weight:700; font-family:inherit; font-size:18px; text-anchor:middle; }
+              .box { fill:#fff; stroke:#d6dbe1; rx:8; ry:8; }
+              .lbl { font-family:inherit; fill:#1b2430; font-weight:700; font-size:13px; text-anchor:middle; }
+              .line { stroke:#2b2b2b; stroke-width:2; stroke-linecap:round; }
+            </style>
+          </defs>
 
-      <rect x="660" y="90" width="220" height="40" fill="white" stroke="black"/>
-      <text x="770" y="115" text-anchor="middle" font-weight="bold">Generación de ideas</text>
+          <!-- central -->
+          <g>
+            <circle cx="500" cy="260" r="85" class="center"/>
+            <text x="500" y="250" class="center-text">Proceso de</text>
+            <text x="500" y="275" class="center-text">Innovación</text>
+          </g>
 
-      <rect x="680" y="240" width="200" height="40" fill="white" stroke="black"/>
-      <text x="780" y="265" text-anchor="middle" font-weight="bold">Implementación</text>
+          <!-- top -->
+          <line x1="500" y1="175" x2="500" y2="110" class="line"/>
+          <rect x="410" y="70" width="180" height="36" class="box"/>
+          <text x="500" y="92" class="lbl">Identificación de oportunidades</text>
 
-      <rect x="640" y="390" width="260" height="40" fill="white" stroke="black"/>
-      <text x="770" y="415" text-anchor="middle" font-weight="bold">Evaluación y selección</text>
+          <!-- top-right -->
+          <line x1="560" y1="230" x2="740" y2="140" class="line"/>
+          <rect x="700" y="120" width="180" height="36" class="box"/>
+          <text x="790" y="142" class="lbl">Generación de ideas</text>
 
-      <rect x="320" y="460" width="260" height="40" fill="white" stroke="black"/>
-      <text x="450" y="485" text-anchor="middle" font-weight="bold">Evaluación de resultados</text>
+          <!-- right -->
+          <line x1="590" y1="300" x2="760" y2="330" class="line"/>
+          <rect x="720" y="315" width="160" height="36" class="box"/>
+          <text x="800" y="337" class="lbl">Implementación</text>
 
-      <rect x="0" y="390" width="260" height="40" fill="white" stroke="black"/>
-      <text x="130" y="415" text-anchor="middle" font-weight="bold">Desarrollo del proyecto</text>
+          <!-- bottom-right -->
+          <line x1="520" y1="345" x2="660" y2="460" class="line"/>
+          <rect x="620" y="445" width="220" height="36" class="box"/>
+          <text x="730" y="467" class="lbl">Evaluación y selección</text>
 
-      <rect x="0" y="240" width="260" height="40" fill="white" stroke="black"/>
-      <text x="130" y="265" text-anchor="middle" font-weight="bold">Planificación y recursos</text>
+          <!-- bottom -->
+          <line x1="450" y1="345" x2="450" y2="465" class="line"/>
+          <rect x="360" y="450" width="180" height="36" class="box"/>
+          <text x="450" y="472" class="lbl">Evaluación de resultados</text>
 
-      <rect x="0" y="90" width="260" height="40" fill="white" stroke="black"/>
-      <text x="130" y="115" text-anchor="middle" font-weight="bold">Validación y prototipos</text>
+          <!-- bottom-left -->
+          <line x1="380" y1="320" x2="240" y2="430" class="line"/>
+          <rect x="120" y="418" width="220" height="36" class="box"/>
+          <text x="230" y="440" class="lbl">Desarrollo del proyecto</text>
 
-    </svg>
-  </div>
+          <!-- left -->
+          <line x1="420" y1="300" x2="240" y2="300" class="line"/>
+          <rect x="120" y="284" width="240" height="36" class="box"/>
+          <text x="240" y="306" class="lbl">Planificación y recursos</text>
 
-  <p>
-    El mapa mental presenta de forma visual las etapas del proceso de innovación y su
-    relación con la Administración de Proyectos, facilitando la comprensión integral
-    del flujo de actividades.
-  </p>
-</section>
+          <!-- top-left -->
+          <line x1="430" y1="240" x2="260" y2="150" class="line"/>
+          <rect x="160" y="132" width="200" height="36" class="box"/>
+          <text x="260" y="154" class="lbl">Validación y prototipos</text>
 
-<section id="fuentes">
-  <h2>Fuentes</h2>
-  <ul>
-    <li>Baca Urbina, G. (2014). <em>Administración de proyectos</em>. McGraw-Hill.</li>
-    <li>PMI. (2021). <em>Guía del PMBOK</em>. Project Management Institute.</li>
-  </ul>
-</section>
+        </svg>
+      </div>
 
-<footer>
-  © 2026 Administración de Proyectos
-</footer>
+      <p style="margin-top:12px; color:var(--muted);">
+        El mapa mental muestra las fases del proceso de innovación y su conexión con la gestión de proyectos:
+        desde identificar oportunidades hasta evaluar resultados y selección de soluciones.
+      </p>
+    </section>
+
+    <section id="metodologias">
+      <h2>Cuadro comparativo — Metodologías</h2>
+      <table>
+        <tr><th>Metodología</th><th>Tipo</th><th>Fases / Procesos</th><th>Ventajas</th><th>Limitaciones</th><th>Ejemplo</th></tr>
+        <tr><td>PMBOK (PMI)</td><td>Tradicional</td><td>Inicio, planificación, ejecución, monitoreo, cierre</td><td>Estructura y control</td><td>Rigidez</td><td>Infraestructura</td></tr>
+        <tr><td>Waterfall</td><td>Tradicional</td><td>Secuencial</td><td>Claridad</td><td>Poca flexibilidad</td><td>Construcción</td></tr>
+        <tr><td>PRINCE2</td><td>Tradicional</td><td>Control por etapas</td><td>Gobernanza</td><td>Documentación</td><td>Sector público</td></tr>
+        <tr><td>Scrum</td><td>Ágil</td><td>Sprints, backlog</td><td>Adaptabilidad</td><td>Requiere equipo maduro</td><td>Software</td></tr>
+        <tr><td>XP</td><td>Ágil</td><td>Iteraciones cortas, TDD</td><td>Calidad técnica</td><td>Disciplina técnica</td><td>Apps web</td></tr>
+        <tr><td>Design Thinking</td><td>Ágil</td><td>Empatizar → Idear → Prototipar</td><td>Foco en usuario</td><td>No es gestión formal</td><td>Innovación</td></tr>
+      </table>
+    </section>
+
+    <section id="fuentes">
+      <h2>Fuentes</h2>
+      <p>Project Management Institute. (2021). <em>A Guide to the PMBOK® Guide</em>, 7th ed.</p>
+      <p>Highsmith, J. (2009). <em>Agile Project Management</em>. Addison-Wesley.</p>
+      <p>Beck, K. (2004). <em>Extreme Programming Explained</em>. Addison-Wesley.</p>
+    </section>
+
+  </main>
+
+  <footer>Entrega CE1.1 / CE1.2 — Administración de Proyectos • UABC</footer>
 
 </body>
 </html>
