@@ -4,47 +4,186 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Administración de Proyectos – Unidad I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --prim:#1f3c88;
-      --dark:#162447;
-      --bg:#f4f6f9;
-      --card:#ffffff;
-      --muted:#5b6b7a;
+    :root {
+      --prim: #1a3666;
+      --prim-light: #2a4f9e;
+      --accent: #c8922a;
+      --accent-light: #e8b040;
+      --dark: #0f2240;
+      --bg: #f0f3f8;
+      --bg-subtle: #e8edf5;
+      --card: #ffffff;
+      --muted: #5e6f87;
+      --border: #d4dbe8;
+      --text: #1c2a3a;
     }
-    *{box-sizing:border-box}
-    body{font-family: "Segoe UI", Arial, sans-serif; margin:0; background:var(--bg); color:#222}
-    header{background:var(--prim); color:white; padding:22px 16px; text-align:center}
-    header h1{margin:0; font-size:24px}
-    header p{margin:6px 0 0; font-size:14px; opacity:0.95}
-    nav{background:var(--dark); padding:10px 0; text-align:center; position:sticky; top:0; z-index:50}
-    nav a{color:white; margin:0 12px; text-decoration:none; font-weight:600; font-size:14px}
-    nav a:hover{text-decoration:underline}
-    main{max-width:1000px; margin:24px auto; padding:0 16px 40px}
-    section{background:var(--card); border-radius:10px; padding:24px; margin:20px 0; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
-    h2{color:var(--prim); margin-top:0; border-bottom:2px solid #e6eef8; padding-bottom:8px}
-    ul{line-height:1.8}
-    .map-wrapper{display:flex; justify-content:center; align-items:center; padding:14px 0;}
-    svg{max-width:100%; height:auto; display:block}
-    table{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px}
-    th, td{border:1px solid #d0d7de; padding:10px; vertical-align:top}
-    th{background:var(--prim); color:white; text-align:left}
-    footer{background:var(--prim); color:white; text-align:center; padding:14px; margin-top:18px}
-    @media (max-width:700px){
-      header h1{font-size:20px}
-      nav a{display:inline-block; margin:6px 8px}
-      section{padding:16px}
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+      margin: 0; background: var(--bg); color: var(--text); line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--prim) 60%, var(--prim-light) 100%);
+      color: white; position: relative; overflow: hidden;
+    }
+    header::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(200,146,42,0.18) 0%, transparent 60%),
+        repeating-linear-gradient(45deg, transparent, transparent 30px,
+          rgba(255,255,255,0.025) 30px, rgba(255,255,255,0.025) 31px);
+    }
+    .header-inner { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 40px 24px 36px; }
+    .header-badge {
+      display: inline-block; background: rgba(200,146,42,0.25);
+      border: 1px solid rgba(200,146,42,0.5); color: var(--accent-light);
+      font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    header h1 {
+      margin: 0 0 10px; font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.2;
+    }
+    .header-meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13.5px; opacity: 0.88; margin-top: 6px; }
+    .header-meta span { display: flex; align-items: center; gap: 5px; }
+    .header-meta span::before { content: '▸'; color: var(--accent-light); font-size: 10px; }
+    nav {
+      background: var(--dark); border-bottom: 3px solid var(--accent);
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 16px; display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a {
+      color: rgba(255,255,255,0.82); text-decoration: none; font-weight: 600;
+      font-size: 12.5px; letter-spacing: 0.4px; padding: 13px 14px;
+      display: inline-block; transition: color 0.2s, background 0.2s; text-transform: uppercase;
+    }
+    nav a:hover { color: var(--accent-light); background: rgba(255,255,255,0.06); }
+    nav a.new-section { color: var(--accent-light); border-left: 1px solid rgba(255,255,255,0.15); }
+    main { max-width: 1080px; margin: 32px auto; padding: 0 20px 60px; }
+    section {
+      background: var(--card); border-radius: 12px; padding: 32px 36px;
+      margin: 24px 0; box-shadow: 0 4px 20px rgba(26,54,102,0.08);
+      border: 1px solid var(--border); position: relative;
+    }
+    section::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 4px; height: 100%; background: var(--prim); border-radius: 12px 0 0 12px;
+    }
+    section.highlight-section::before { background: linear-gradient(180deg, var(--accent) 0%, var(--prim) 100%); }
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif; color: var(--prim);
+      margin-top: 0; margin-bottom: 18px; font-size: 22px; font-weight: 700;
+      padding-bottom: 12px; border-bottom: 1px solid var(--bg-subtle);
+      display: flex; align-items: center; gap: 10px;
+    }
+    h2 .section-num {
+      background: var(--prim); color: white; font-family: 'Source Sans 3', sans-serif;
+      font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: 1px;
+    }
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif; color: var(--prim-light);
+      font-size: 16px; margin: 28px 0 10px; padding-bottom: 5px; border-bottom: 1px dashed var(--border);
+    }
+    p { margin: 0 0 12px; }
+    strong { color: var(--prim); }
+    ul { padding-left: 0; list-style: none; margin: 0 0 10px; }
+    ul li { padding: 7px 0 7px 22px; position: relative; border-bottom: 1px solid var(--bg-subtle); font-size: 14.5px; }
+    ul li:last-child { border-bottom: none; }
+    ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 10px; }
+    .map-wrapper {
+      display: flex; justify-content: center; align-items: center;
+      padding: 20px 0 10px; background: linear-gradient(135deg, #f7f9fc, #edf0f7);
+      border-radius: 8px; margin: 16px 0;
+    }
+    svg { max-width: 100%; height: auto; display: block; }
+    .table-wrap { overflow-x: auto; margin-top: 16px; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th { background: var(--prim); color: white; text-align: left; padding: 12px 14px; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+    td { border: 1px solid var(--border); padding: 11px 14px; vertical-align: top; }
+    tr:nth-child(even) td { background: #f7f9fc; }
+    tr:hover td { background: #edf1f9; }
+    .sources-list p { font-size: 14px; padding: 10px 14px; border-left: 3px solid var(--border); margin: 8px 0; background: var(--bg); border-radius: 0 6px 6px 0; }
+    .report-intro {
+      background: linear-gradient(135deg, #f0f4fa, #e8edf8); border: 1px solid #c5d0e8;
+      border-left: 4px solid var(--prim-light); border-radius: 8px; padding: 18px 22px;
+      margin-bottom: 24px; font-size: 14.5px;
+    }
+    .report-body { font-size: 14.5px; line-height: 1.75; }
+    .report-body p { margin-bottom: 13px; text-align: justify; }
+    .roles-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 14px 0; }
+    .roles-table th { background: var(--prim); color: white; padding: 10px 12px; text-align: left; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .roles-table td { padding: 9px 12px; border: 1px solid var(--border); vertical-align: top; }
+    .roles-table tr:nth-child(even) td { background: #f7f9fc; }
+    .roles-table td:first-child { font-weight: 600; color: var(--prim); }
+    .tbl-caption { font-size: 12.5px; color: var(--muted); text-align: center; margin: 4px 0 16px; font-style: italic; }
+    .conclusions-grid { display: grid; gap: 12px; margin: 16px 0; }
+    .conclusion-card { display: grid; grid-template-columns: 42px 1fr; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .conclusion-num {
+      background: var(--prim); color: white; display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700;
+    }
+    .conclusion-body { padding: 14px 18px; background: white; }
+    .conclusion-body strong { display: block; margin-bottom: 5px; font-size: 14px; color: var(--prim); }
+    .conclusion-body p { margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--text); }
+    .pdf-embed-wrap {
+      border: 1px solid var(--border); border-radius: 10px;
+      overflow: hidden; margin: 20px 0;
+      box-shadow: 0 4px 16px rgba(26,54,102,0.10);
+    }
+    .pdf-embed-header {
+      background: var(--prim); color: white;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px; font-size: 13.5px; font-weight: 600;
+    }
+    .pdf-iframe { width: 100%; height: 780px; border: none; display: block; background: #525659; }
+    .btn-pdf-sm {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent); color: white;
+      padding: 7px 16px; border-radius: 6px;
+      font-size: 12.5px; font-weight: 700; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-pdf-sm:hover { background: var(--accent-light); color: var(--dark); }
+    .references-block {
+      background: #f7f9fc; border-radius: 8px; padding: 18px 22px;
+      margin-top: 20px; border: 1px solid var(--border);
+    }
+    .references-block h4 { margin: 0 0 12px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 700; font-family: 'Source Sans 3', sans-serif; }
+    .ref-entry { font-size: 13.5px; padding: 8px 0 8px 18px; text-indent: -18px; margin: 0 0 8px; border-bottom: 1px dashed var(--border); line-height: 1.6; }
+    .ref-entry:last-child { border-bottom: none; margin: 0; }
+    footer {
+      background: linear-gradient(135deg, var(--dark), var(--prim));
+      color: rgba(255,255,255,0.9); text-align: center;
+      padding: 22px 16px; font-size: 13px; letter-spacing: 0.3px;
+    }
+    footer span { color: var(--accent-light); font-weight: 600; }
+    @media(max-width:720px) {
+      section { padding: 20px 18px; }
+      h2 { font-size: 19px; }
+      nav a { padding: 10px 9px; font-size: 11px; }
+      .pdf-iframe { height: 480px; }
     }
   </style>
 </head>
 <body>
 
-  <header>
+<header>
+  <div class="header-inner">
+    <div class="header-badge">UABC — Unidad I</div>
     <h1>Administración de Proyectos</h1>
-    <p><strong>Alumno:</strong> Jorge Emilio Garcia Raygoza — Materia: Administración de Proyectos — Unidad I</p>
-  </header>
+    <div class="header-meta">
+      <span>Jorge Emilio Garcia Raygoza</span>
+      <span>Materia: Administración de Proyectos</span>
+      <span>CE 1.1 / CE 1.2 / CE 1.3</span>
+    </div>
+  </div>
+</header>
 
-  <nav>
+<nav>
+  <div class="nav-inner">
     <a href="#inicio">Inicio</a>
     <a href="#introduccion">Introducción</a>
     <a href="#elementos">Elementos</a>
@@ -54,133 +193,83 @@
     <a href="#mapa">Mapa mental</a>
     <a href="#metodologias">Metodologías</a>
     <a href="#fuentes">Fuentes</a>
-  </nav>
+    <a href="#ce13" class="new-section">▸ CE1.3 Reporte</a>
+  </div>
+</nav>
 
-  <main>
+<main>
 
-    <section id="inicio">
-      <h2>Inicio</h2>
-      <p>Este sitio integra los conceptos esenciales de la Administración de Proyectos (Unidad I) y presenta un mapa mental del proceso de innovación junto con un cuadro comparativo de metodologías tradicionales y ágiles (CE1.1 / CE1.2).</p>
-    </section>
+  <section id="inicio">
+    <h2><span class="section-num">CE 1.1</span>Inicio</h2>
+    <p>Este sitio integra los conceptos esenciales de la Administración de Proyectos (Unidad I) y presenta un mapa mental del proceso de innovación junto con un cuadro comparativo de metodologías tradicionales y ágiles (CE1.1 / CE1.2). La sección CE1.3 incluye el reporte académico de justificación de paper.</p>
+  </section>
 
-    <section id="introduccion">
-      <h2>Introducción a la Administración de Proyectos</h2>
-      <p><strong>Definición:</strong> La Administración de Proyectos es la aplicación de conocimientos, habilidades, herramientas y técnicas para lograr los objetivos del proyecto.</p>
-      <p><strong>¿Qué es un proyecto?</strong> Es un esfuerzo temporal para crear un producto, servicio o resultado único.</p>
-    </section>
+  <section id="introduccion">
+    <h2>Introducción a la Administración de Proyectos</h2>
+    <p><strong>Definición:</strong> La Administración de Proyectos es la aplicación de conocimientos, habilidades, herramientas y técnicas para lograr los objetivos del proyecto.</p>
+    <p><strong>¿Qué es un proyecto?</strong> Es un esfuerzo temporal para crear un producto, servicio o resultado único.</p>
+  </section>
 
-    <section id="elementos">
-      <h2>Elementos clave</h2>
-      <ul>
-        <li><strong>Objetivos:</strong> Resultados esperados.</li>
-        <li><strong>Alcance:</strong> Entregables y límites.</li>
-        <li><strong>Tiempo:</strong> Cronograma y hitos.</li>
-        <li><strong>Costo:</strong> Presupuesto.</li>
-        <li><strong>Calidad:</strong> Estándares a cumplir.</li>
-        <li><strong>Riesgos:</strong> Identificación y respuesta.</li>
-        <li><strong>Stakeholders:</strong> Partes interesadas.</li>
-      </ul>
-    </section>
+  <section id="elementos">
+    <h2>Elementos clave</h2>
+    <ul>
+      <li><strong>Objetivos:</strong> Resultados esperados.</li>
+      <li><strong>Alcance:</strong> Entregables y límites.</li>
+      <li><strong>Tiempo:</strong> Cronograma y hitos.</li>
+      <li><strong>Costo:</strong> Presupuesto.</li>
+      <li><strong>Calidad:</strong> Estándares a cumplir.</li>
+      <li><strong>Riesgos:</strong> Identificación y respuesta.</li>
+      <li><strong>Stakeholders:</strong> Partes interesadas.</li>
+    </ul>
+  </section>
 
-    <section id="ciclo">
-      <h2>Ciclo de vida del proyecto</h2>
-      <p>Inicio → Planeación → Ejecución → Monitoreo y control → Cierre.</p>
-    </section>
+  <section id="ciclo">
+    <h2>Ciclo de vida del proyecto</h2>
+    <p>Inicio → Planeación → Ejecución → Monitoreo y control → Cierre.</p>
+  </section>
 
-    <section id="roles">
-      <h2>Roles y responsabilidades</h2>
-      <ul>
-        <li><strong>Director del proyecto:</strong> Liderazgo, planificación y seguimiento.</li>
-        <li><strong>Equipo:</strong> Ejecución técnica.</li>
-        <li><strong>Patrocinador:</strong> Provisión de recursos.</li>
-        <li><strong>Stakeholders:</strong> Interesados y su gestión.</li>
-      </ul>
-    </section>
+  <section id="roles">
+    <h2>Roles y responsabilidades</h2>
+    <ul>
+      <li><strong>Director del proyecto:</strong> Liderazgo, planificación y seguimiento.</li>
+      <li><strong>Equipo:</strong> Ejecución técnica.</li>
+      <li><strong>Patrocinador:</strong> Provisión de recursos.</li>
+      <li><strong>Stakeholders:</strong> Interesados y su gestión.</li>
+    </ul>
+  </section>
 
-    <section id="herramientas">
-      <h2>Herramientas básicas</h2>
-      <ul>
-        <li>EDT (Estructura de Desglose de Trabajo)</li>
-        <li>Diagrama de Gantt</li>
-        <li>Matriz de riesgos</li>
-        <li>Plan de comunicación</li>
-      </ul>
-    </section>
+  <section id="herramientas">
+    <h2>Herramientas básicas</h2>
+    <ul>
+      <li>EDT (Estructura de Desglose de Trabajo)</li>
+      <li>Diagrama de Gantt</li>
+      <li>Matriz de riesgos</li>
+      <li>Plan de comunicación</li>
+    </ul>
+  </section>
 
-    <!-- MAPA MENTAL (la versión estable y centrada que te gustó) -->
-    <section id="mapa">
-      <h2>Mapa mental — Proceso de Innovación</h2>
+  <section id="mapa">
+    <h2>Mapa mental — Proceso de Innovación</h2>
+    <div class="map-wrapper">
+      <svg viewBox="0 0 1000 520" width="100%" height="auto" role="img" aria-label="Mapa mental proceso de innovación">
+        <defs><style>.center{fill:#1e3a5f}.center-text{fill:#fff;font-weight:700;font-family:inherit;font-size:18px;text-anchor:middle}.box{fill:#fff;stroke:#d6dbe1}.lbl{font-family:inherit;fill:#1b2430;font-weight:700;font-size:13px;text-anchor:middle}.line{stroke:#2b2b2b;stroke-width:2;stroke-linecap:round}</style></defs>
+        <g><circle cx="500" cy="260" r="85" class="center"/><text x="500" y="250" class="center-text">Proceso de</text><text x="500" y="275" class="center-text">Innovación</text></g>
+        <line x1="500" y1="175" x2="500" y2="110" class="line"/><rect x="410" y="70" width="180" height="36" class="box"/><text x="500" y="92" class="lbl">Identificación de oportunidades</text>
+        <line x1="560" y1="230" x2="740" y2="140" class="line"/><rect x="700" y="120" width="180" height="36" class="box"/><text x="790" y="142" class="lbl">Generación de ideas</text>
+        <line x1="590" y1="300" x2="760" y2="330" class="line"/><rect x="720" y="315" width="160" height="36" class="box"/><text x="800" y="337" class="lbl">Implementación</text>
+        <line x1="520" y1="345" x2="660" y2="460" class="line"/><rect x="620" y="445" width="220" height="36" class="box"/><text x="730" y="467" class="lbl">Evaluación y selección</text>
+        <line x1="450" y1="345" x2="450" y2="465" class="line"/><rect x="360" y="450" width="180" height="36" class="box"/><text x="450" y="472" class="lbl">Evaluación de resultados</text>
+        <line x1="380" y1="320" x2="240" y2="430" class="line"/><rect x="120" y="418" width="220" height="36" class="box"/><text x="230" y="440" class="lbl">Desarrollo del proyecto</text>
+        <line x1="420" y1="300" x2="240" y2="300" class="line"/><rect x="120" y="284" width="240" height="36" class="box"/><text x="240" y="306" class="lbl">Planificación y recursos</text>
+        <line x1="430" y1="240" x2="260" y2="150" class="line"/><rect x="160" y="132" width="200" height="36" class="box"/><text x="260" y="154" class="lbl">Validación y prototipos</text>
+      </svg>
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:13.5px;">El mapa mental muestra las fases del proceso de innovación y su conexión con la gestión de proyectos: desde identificar oportunidades hasta evaluar resultados y selección de soluciones.</p>
+  </section>
 
-      <div class="map-wrapper" aria-hidden="false">
-        <svg viewBox="0 0 1000 520" width="100%" height="auto" role="img" aria-label="Mapa mental proceso de innovación">
-          <defs>
-            <style>
-              .center { fill:#1e3a5f; }
-              .center-text { fill:#fff; font-weight:700; font-family:inherit; font-size:18px; text-anchor:middle; }
-              .box { fill:#fff; stroke:#d6dbe1; rx:8; ry:8; }
-              .lbl { font-family:inherit; fill:#1b2430; font-weight:700; font-size:13px; text-anchor:middle; }
-              .line { stroke:#2b2b2b; stroke-width:2; stroke-linecap:round; }
-            </style>
-          </defs>
-
-          <!-- central -->
-          <g>
-            <circle cx="500" cy="260" r="85" class="center"/>
-            <text x="500" y="250" class="center-text">Proceso de</text>
-            <text x="500" y="275" class="center-text">Innovación</text>
-          </g>
-
-          <!-- top -->
-          <line x1="500" y1="175" x2="500" y2="110" class="line"/>
-          <rect x="410" y="70" width="180" height="36" class="box"/>
-          <text x="500" y="92" class="lbl">Identificación de oportunidades</text>
-
-          <!-- top-right -->
-          <line x1="560" y1="230" x2="740" y2="140" class="line"/>
-          <rect x="700" y="120" width="180" height="36" class="box"/>
-          <text x="790" y="142" class="lbl">Generación de ideas</text>
-
-          <!-- right -->
-          <line x1="590" y1="300" x2="760" y2="330" class="line"/>
-          <rect x="720" y="315" width="160" height="36" class="box"/>
-          <text x="800" y="337" class="lbl">Implementación</text>
-
-          <!-- bottom-right -->
-          <line x1="520" y1="345" x2="660" y2="460" class="line"/>
-          <rect x="620" y="445" width="220" height="36" class="box"/>
-          <text x="730" y="467" class="lbl">Evaluación y selección</text>
-
-          <!-- bottom -->
-          <line x1="450" y1="345" x2="450" y2="465" class="line"/>
-          <rect x="360" y="450" width="180" height="36" class="box"/>
-          <text x="450" y="472" class="lbl">Evaluación de resultados</text>
-
-          <!-- bottom-left -->
-          <line x1="380" y1="320" x2="240" y2="430" class="line"/>
-          <rect x="120" y="418" width="220" height="36" class="box"/>
-          <text x="230" y="440" class="lbl">Desarrollo del proyecto</text>
-
-          <!-- left -->
-          <line x1="420" y1="300" x2="240" y2="300" class="line"/>
-          <rect x="120" y="284" width="240" height="36" class="box"/>
-          <text x="240" y="306" class="lbl">Planificación y recursos</text>
-
-          <!-- top-left -->
-          <line x1="430" y1="240" x2="260" y2="150" class="line"/>
-          <rect x="160" y="132" width="200" height="36" class="box"/>
-          <text x="260" y="154" class="lbl">Validación y prototipos</text>
-
-        </svg>
-      </div>
-
-      <p style="margin-top:12px; color:var(--muted);">
-        El mapa mental muestra las fases del proceso de innovación y su conexión con la gestión de proyectos:
-        desde identificar oportunidades hasta evaluar resultados y selección de soluciones.
-      </p>
-    </section>
-
-    <section id="metodologias">
-      <h2>Cuadro comparativo — Metodologías</h2>
+  <section id="metodologias">
+    <h2><span class="section-num">CE 1.2</span>Cuadro comparativo — Metodologías</h2>
+    <div class="table-wrap">
       <table>
         <tr><th>Metodología</th><th>Tipo</th><th>Fases / Procesos</th><th>Ventajas</th><th>Limitaciones</th><th>Ejemplo</th></tr>
         <tr><td>PMBOK (PMI)</td><td>Tradicional</td><td>Inicio, planificación, ejecución, monitoreo, cierre</td><td>Estructura y control</td><td>Rigidez</td><td>Infraestructura</td></tr>
@@ -190,18 +279,156 @@
         <tr><td>XP</td><td>Ágil</td><td>Iteraciones cortas, TDD</td><td>Calidad técnica</td><td>Disciplina técnica</td><td>Apps web</td></tr>
         <tr><td>Design Thinking</td><td>Ágil</td><td>Empatizar → Idear → Prototipar</td><td>Foco en usuario</td><td>No es gestión formal</td><td>Innovación</td></tr>
       </table>
-    </section>
+    </div>
+  </section>
 
-    <section id="fuentes">
-      <h2>Fuentes</h2>
+  <section id="fuentes">
+    <h2>Fuentes</h2>
+    <div class="sources-list">
       <p>Project Management Institute. (2021). <em>A Guide to the PMBOK® Guide</em>, 7th ed.</p>
       <p>Highsmith, J. (2009). <em>Agile Project Management</em>. Addison-Wesley.</p>
       <p>Beck, K. (2004). <em>Extreme Programming Explained</em>. Addison-Wesley.</p>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section id="ce13" class="highlight-section">
+    <h2><span class="section-num">CE 1.3</span>Reporte de investigación</h2>
 
-  <footer>Entrega CE1.1 / CE1.2 — Administración de Proyectos • UABC</footer>
+    <div class="report-intro">
+      <strong>Paper analizado:</strong> Cervone, H. F. (2011). Understanding agile project management methods using Scrum.
+      <em>OCLC Systems &amp; Services: International Digital Library Perspectives, 27</em>(1), 18–22.
+      El reporte justifica la pertinencia de Scrum para proyectos de innovación y su relevancia en la carrera de Inteligencia de Negocios.
+    </div>
+
+    <h3>1. Introducción</h3>
+    <div class="report-body">
+      <p>La administración de proyectos ha evolucionado significativamente en las últimas décadas, impulsada por la necesidad de gestionar entornos cada vez más complejos, dinámicos y orientados a la innovación. En este contexto, la metodología Scrum —marco ágil nacido en el desarrollo de software y hoy ampliamente adoptado en sectores de alta incertidumbre— ha demostrado ser una de las aproximaciones más eficaces para gestionar proyectos donde los requisitos evolucionan y la velocidad de entrega es crítica.</p>
+      <p>El paper seleccionado para el presente análisis es el artículo de Cervone (2011), publicado en el <em>OCLC Systems &amp; Services: International Digital Library Perspectives</em>. Este trabajo ofrece una introducción estructurada a Scrum como metodología ágil de administración de proyectos, describiendo sus componentes esenciales y argumentando su utilidad en entornos organizacionales que requieren flexibilidad y entregas frecuentes de valor.</p>
+      <p>El propósito del presente reporte es analizar críticamente los planteamientos de dicho paper, justificar la pertinencia de Scrum para proyectos de innovación y reflexionar sobre su aplicabilidad en el campo de la Inteligencia de Negocios.</p>
+    </div>
+
+    <h3>2. Metodología analizada</h3>
+    <div class="report-body">
+      <p>Scrum es un marco de trabajo ágil desarrollado originalmente por Ken Schwaber y Jeff Sutherland a principios de la década de 1990, cuya versión actual está formalizada en la <em>Scrum Guide</em> (Schwaber &amp; Sutherland, 2020). Se fundamenta en tres pilares: <strong>transparencia</strong> (visibilidad del proceso para todos los involucrados), <strong>inspección</strong> (verificación continua del avance hacia los objetivos) y <strong>adaptación</strong> (ajuste inmediato ante desviaciones detectadas).</p>
+      <p>Cervone (2011) describe los elementos constitutivos de Scrum de la siguiente manera:</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="roles-table">
+        <tr><th>Elemento</th><th>Descripción</th></tr>
+        <tr><td>Product Owner</td><td>Responsable de definir y priorizar el Product Backlog. Representa la voz del cliente o usuario final dentro del equipo de proyecto.</td></tr>
+        <tr><td>Scrum Master</td><td>Facilitador del proceso. Elimina impedimentos, protege al equipo de interferencias externas y asegura el cumplimiento del marco Scrum.</td></tr>
+        <tr><td>Equipo de desarrollo</td><td>Grupo autoorganizado y multifuncional que ejecuta las tareas del Sprint. Generalmente de 3 a 9 personas.</td></tr>
+        <tr><td>Sprint</td><td>Ciclo de trabajo de duración fija (1 a 4 semanas) al final del cual se produce un incremento funcional potencialmente entregable.</td></tr>
+        <tr><td>Product Backlog</td><td>Lista priorizada y ordenada de todas las funcionalidades y mejoras deseadas del producto, gestionada por el Product Owner.</td></tr>
+        <tr><td>Sprint Backlog</td><td>Subconjunto del Product Backlog seleccionado por el equipo para el Sprint en curso, más el plan de ejecución.</td></tr>
+        <tr><td>Daily Scrum</td><td>Reunión diaria de 15 minutos para sincronizar el avance del equipo y detectar obstáculos que requieran atención.</td></tr>
+        <tr><td>Sprint Review</td><td>Demostración del incremento funcional al final del Sprint para obtener retroalimentación directa de los interesados.</td></tr>
+        <tr><td>Retrospectiva</td><td>Reunión del equipo para reflexionar sobre el proceso de trabajo e identificar mejoras concretas para el próximo Sprint.</td></tr>
+      </table>
+    </div>
+    <p class="tbl-caption">Tabla 1. Elementos clave del marco de trabajo Scrum (Cervone, 2011; Schwaber &amp; Sutherland, 2020).</p>
+
+    <h3>3. Justificación de la metodología aplicada a un proyecto de innovación</h3>
+    <div class="report-body">
+      <p>Cervone (2011) justifica la adopción de Scrum en proyectos innovadores a partir de tres argumentos centrales:</p>
+      <p><strong>Gestión de la complejidad y la ambigüedad:</strong> Los proyectos de innovación raramente pueden especificarse completamente al inicio. Scrum abraza esta realidad mediante revisiones frecuentes del Product Backlog, permitiendo que las prioridades evolucionen conforme se obtiene retroalimentación real del usuario o del mercado. Este enfoque reduce drásticamente el riesgo de invertir tiempo y recursos en funcionalidades que pierden relevancia antes de ser entregadas.</p>
+      <p><strong>Entrega de valor incremental:</strong> Al producir incrementos funcionales cada Sprint, el equipo genera valor tangible desde las primeras semanas del proyecto. Esto reduce el riesgo de desarrollar soluciones que no satisfagan las necesidades del cliente, un problema recurrente en proyectos de innovación tecnológica gestionados con metodologías secuenciales donde la validación ocurre demasiado tarde en el ciclo de vida.</p>
+      <p><strong>Mejora continua del equipo:</strong> Las retrospectivas permiten al equipo identificar sus propias ineficiencias y corregirlas en el siguiente Sprint. Este mecanismo de aprendizaje organizacional es especialmente valioso en proyectos de innovación, donde el equipo frecuentemente también innova en sus propios procesos de trabajo y enfrenta desafíos técnicos sin precedentes.</p>
+      <p>Complementariamente, el PMI (2021) reconoce en la séptima edición del PMBOK® Guide que los proyectos actuales requieren enfoques adaptativos. La elección de Scrum para proyectos de innovación se alinea con este reconocimiento institucional, brindando legitimidad metodológica adicional a su aplicación en entornos organizacionales que exigen evidencia de buenas prácticas internacionales.</p>
+    </div>
+
+    <h3>4. Relevancia para la carrera de Inteligencia de Negocios</h3>
+    <div class="report-body">
+      <p>La carrera de Inteligencia de Negocios forma profesionales capaces de transformar datos en decisiones estratégicas mediante el desarrollo e implementación de soluciones analíticas. Esta naturaleza interdisciplinaria sitúa a los egresados de IB en el cruce entre la tecnología, los negocios y la innovación, escenario donde Scrum resulta especialmente pertinente por las siguientes razones:</p>
+      <p><strong>Requisitos cambiantes:</strong> Los indicadores clave de desempeño (KPIs) y las necesidades analíticas de los usuarios de negocio evolucionan conforme la organización aprende de los datos disponibles y ajusta sus objetivos estratégicos. La estructura iterativa de Scrum permite incorporar estos cambios de forma controlada sin comprometer la estabilidad del proyecto.</p>
+      <p><strong>Colaboración estrecha con el cliente:</strong> El rol del Product Owner en Scrum replica el perfil del analista de IB, que debe actuar como puente entre el área de negocio y el equipo técnico, traduciendo necesidades estratégicas en requerimientos concretos de datos, reportes y dashboards.</p>
+      <p><strong>Entregables incrementales de alto valor:</strong> Un dashboard funcional entregado al final del primer Sprint genera retroalimentación inmediata de los usuarios de negocio, permitiendo ajustar el alcance analítico antes de invertir en desarrollos más complejos como modelos predictivos o sistemas de machine learning.</p>
+      <p><strong>Gestión del riesgo técnico:</strong> Las iteraciones cortas de Scrum permiten detectar tempranamente problemas de calidad de datos, latencia de consultas o incompatibilidades de integración entre sistemas fuente y el data warehouse, reduciendo el impacto de estos riesgos técnicos en el proyecto global.</p>
+      <p>Kerzner (2017) subraya que la habilidad de seleccionar y aplicar la metodología adecuada según el contexto del proyecto es una de las competencias más valoradas en un director de proyectos moderno. Para un profesional de Inteligencia de Negocios, dominar Scrum amplía significativamente su empleabilidad y su capacidad de liderar iniciativas de transformación digital y analítica avanzada en organizaciones de cualquier sector económico.</p>
+    </div>
+
+    <h3>5. Conclusiones</h3>
+    <div class="conclusions-grid">
+
+      <div class="conclusion-card">
+        <div class="conclusion-num">1</div>
+        <div class="conclusion-body">
+          <strong>Scrum como metodología de referencia para la innovación</strong>
+          <p>El análisis del paper de Cervone (2011) confirma que Scrum ofrece un marco robusto y flexible para gestionar proyectos de innovación. Su estructura iterativa e incremental convierte la incertidumbre —una amenaza en metodologías tradicionales— en un insumo para la mejora continua del producto y del equipo.</p>
+        </div>
+      </div>
+
+      <div class="conclusion-card">
+        <div class="conclusion-num">2</div>
+        <div class="conclusion-body">
+          <strong>Complementariedad con el estándar PMBOK</strong>
+          <p>Scrum no reemplaza los principios fundamentales de la administración de proyectos descritos por el PMI (2021), sino que los implementa de forma adaptativa. Los dominios de desempeño del PMBOK® Guide 7.ª edición —entrega, incertidumbre, trabajo en equipo— encuentran expresión concreta en las ceremonias y artefactos de Scrum.</p>
+        </div>
+      </div>
+
+      <div class="conclusion-card">
+        <div class="conclusion-num">3</div>
+        <div class="conclusion-body">
+          <strong>Valor formativo para el estudiante de IB</strong>
+          <p>La revisión de este paper ha permitido comprender que la administración ágil de proyectos no es solo una técnica operativa, sino una filosofía de trabajo que prioriza la entrega de valor sobre el seguimiento rígido de un plan. Esta perspectiva resulta transformadora para quien se forma en Inteligencia de Negocios.</p>
+        </div>
+      </div>
+
+      <div class="conclusion-card">
+        <div class="conclusion-num">4</div>
+        <div class="conclusion-body">
+          <strong>Limitaciones identificadas</strong>
+          <p>Scrum demanda un nivel de madurez organizacional y técnica que no siempre está disponible en los primeros proyectos de un equipo. La resistencia cultural al cambio, la dificultad para mantener un Product Owner disponible y comprometido, y la curva de aprendizaje inicial son desafíos reales que deben gestionarse activamente para garantizar el éxito de la metodología.</p>
+        </div>
+      </div>
+
+      <div class="conclusion-card">
+        <div class="conclusion-num">5</div>
+        <div class="conclusion-body">
+          <strong>Proyección de aprendizaje personal</strong>
+          <p>Como futuro profesional de Inteligencia de Negocios, me propongo profundizar en la certificación Scrum (Scrum.org o Scrum Alliance) y en la combinación de Scrum con prácticas de DevOps y DataOps, que representan la frontera actual de la gestión ágil de proyectos de datos e inteligencia artificial.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PDF EMBEBIDO -->
+    <h3>Documento académico completo (PDF)</h3>
+    <div class="pdf-embed-wrap">
+      <div class="pdf-embed-header">
+        <span>📄 CE1.3 — Reporte de Investigación</span>
+        <a href="reporte_CE1.3.pdf" download="Reporte_CE1.3_JorgeGarciaRaygoza.pdf" class="btn-pdf-sm">⬇ Descargar</a>
+      </div>
+      <iframe
+        src="reporte_CE1.3.pdf"
+        class="pdf-iframe"
+        title="Reporte CE1.3 — Administración de Proyectos"
+      >
+        <p>Tu navegador no puede mostrar el PDF directamente.
+           <a href="reporte_CE1.3.pdf">Haz clic aquí para descargarlo.</a>
+        </p>
+      </iframe>
+    </div>
+
+    <!-- REFERENCIAS -->
+    <h3>Referencias bibliográficas — APA 7.ª edición</h3>
+    <div class="references-block">
+      <h4>Referencias</h4>
+      <p class="ref-entry">Cervone, H. F. (2011). Understanding agile project management methods using Scrum. <em>OCLC Systems &amp; Services: International Digital Library Perspectives, 27</em>(1), 18–22. https://doi.org/10.1108/10650751111106528</p>
+      <p class="ref-entry">Highsmith, J. (2009). <em>Agile project management: Creating innovative products</em> (2nd ed.). Addison-Wesley Professional.</p>
+      <p class="ref-entry">Kerzner, H. (2017). <em>Project management: A systems approach to planning, scheduling, and controlling</em> (12th ed.). Wiley.</p>
+      <p class="ref-entry">Project Management Institute. (2021). <em>A guide to the project management body of knowledge (PMBOK® Guide)</em> (7th ed.). Project Management Institute.</p>
+      <p class="ref-entry">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum guide: The definitive guide to Scrum: The rules of the game</em>. Scrum.org. https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf</p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <span>CE1.1 / CE1.2 / CE1.3</span> — Administración de Proyectos · UABC &nbsp;|&nbsp; Jorge Emilio Garcia Raygoza · Febrero 2026
+</footer>
 
 </body>
 </html>
